@@ -1,0 +1,161 @@
+% PLEASE do not use fonts, bolding, or other formatting; only plain text!
+% This is plain-text LaTeX source. I'm only calling it .rtf so Google Docs
+% doesn't give a BS 'file type not supported' error message.
+\documentclass[11pt]{article}
+\usepackage[letterpaper, portrait, margin=3cm]{geometry}
+
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{placeins}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage[parfill]{parskip}
+\newcommand{\solution}[1]{{{\color{blue}{\bf Solution:} {#1}}}}
+\usepackage[usenames,dvipsnames,svgnames,table,hyperref]{xcolor}
+
+\hyphenation{WebGL}
+
+\begin{document}
+
+\begin{center}
+\Large{\textbf{Resum\'e}}
+
+\normalsize David Akeley
+\end{center}
+
+\section{Work Experience}
+
+\subsection{Stanford Aetherling Project -- June - September 2018}
+\begin{enumerate}
+\item Aetherling currently aims to support automatic parallelization
+  of hardware image pipelines designed using a Haskell intermediate
+  representation.
+\item Contributed to Aetherling's functional simulator and worked to
+  remove impediments to parallelizing Aetherling line
+  buffers.\footnote{A line buffer device reads in an image as a stream
+    of pixel values and outputs rectangular portions (``windows'') of
+    the image.}
+\item Collaborated with David Durst (lead author), Dr. Kayvon
+  Fatahalian, and Dr. Pat Hanrahan.
+\end{enumerate}
+\texttt{https://github.com/David-Durst/aetherlingHaskellIR}
+
+\texttt{https://github.com/David-Durst/aetherling}
+
+\subsection{MediocrePy -- June 2017}
+\begin{enumerate}
+\item Library for reducing stacks of images to a single image using pixel
+means or medians and optional outlier rejection (sigma clipping).
+\item Multithreaded C core with AVX vectorization; C and Python (numpy)
+  interface.
+\item Collaborated with Dr. Zheng Cai, UC Santa Cruz Astrophysics.
+\end{enumerate}
+\texttt{https://github.com/akeley98/MediocrePy}
+\subsection{Tsinghua Astrophysics -- July - August 2016}
+\begin{enumerate}
+\item Designed a library for fitting and plotting standard
+  microlensing event light curves given a set of brightness
+  data for a star.
+\item Used Python, C++, SciPy, Matplotlib.
+\item Collaborated with Dr. Shude Mao.
+\end{enumerate}
+\subsection{Jide Technology Co. -- June - July 2015}
+\begin{enumerate}
+\item Product testing for RemixOS, an Android derivative with a
+  desktop-like interface.
+
+\item Wrote RemixOS documentation in English.
+
+\item Edited marketing literature in English.
+
+\item Collaborated with Jason Zheng and Jeff Zhao (International
+  Marketing Manager).
+\end{enumerate}
+
+\section{Other Projects}
+
+\subsection{WebGL Jelly Cube Project}
+
+Simple mass-spring system simulation written with Javascript,
+WebAssembly, and WebGL 2.0 (for refractive and reflective effects).
+Earned third place in the UCLA computer graphics class contest, Fall
+2017.\footnote{
+  https://www.facebook.com/vasilescu.alex/posts/10155206917936588}
+
+\texttt{https://github.com/akeley98/JellyMcJelloFace}
+
+\subsection{DementedIGPU -- Linux Nvidia Setup Script}
+
+Laptops with Nvidia graphics cards often work unreliably with the
+GNU/Linux operating system, especially when attempting to switch
+between high-performance discrete graphics and low-power integrated
+graphics. I wrote a Python 3 script that automatically installs and
+configures software needed to provide a (relatively) reliable option
+at boot time between high- and low-power graphics.\footnote{This
+  automation depends on the user using a system with \texttt{apt},
+  \texttt{systemd}, and the \texttt{GRUB} bootloader. Tested with
+  Ubuntu 18.04.} I documented the script liberally in order to make it
+as beginner-friendly as a command line application can be.
+
+\texttt{https://github.com/akeley98/DementedIGPU}
+
+\section{UCLA Education -- 2017-Present}
+
+First Major: Computer Science
+
+Second Major: Pure Mathematics
+
+GPA: 3.730 (As of July 2019)
+
+Courses Taken:
+
+% Note classes organized by name, not by time.
+\begin{tabular}{l|l|l}
+Number & Title & Content Notes \\
+\hline
+Math 110A & Algebra & Basic Ring Theory \\
+Math 110AH & Algebra Honors & Group Theory \\
+Math 111 & Theory of Numbers & Overview of p-adic Numbers \\
+Math 115A & Linear Algebra & \\
+Math 120A & Differential Geometry & \\
+Math 131AH & Analysis-Honors & Metric Spaces \\
+Math 131BH & Analysis-Honors & Derivation, Riemann Integration \\
+Math 132H & Complex Analysis Honors & \\
+Math 170A & Probability Theory & \\
+EE M16 & Digital Systems & Verilog Lab \\
+EE M116C & Computer Systems Architecture & \\
+CS 35L & Software Construction Lab & POSIX basics (e.g. pthreads, bash) \\
+CS 111 & Operating Systems Principles & Focus on POSIX \\
+CS 131 & Programming Languages & \\
+CS M146 & Machine Learning & \\
+CS M152A & Digital Design Lab & Verilog Team Project \\
+CS 161 & Fundamentals of Artificial Intelligence & \\
+CS 180 & Algorithms \& Complexity & \\
+CS 174A & Intro to Computer Graphics & See WebGL Jelly Cube Project \\
+CS 181 & Formal Languages\footnotemark & Regex, CFG, Turing Machines, Decidability \\
+Engr 185EW & Art of Engineering Endeavors & Writing Intensive
+\end{tabular}
+\footnotetext{Full title: Introduction to Formal
+Languages and Automata Theory}
+
+\section{West Valley College Education -- 2015-2017}
+
+GPA: 4.0 (upon transferring to UCLA)
+
+Select Courses Taken
+
+\begin{tabular}{l|l|l}
+Number & Title & Content Notes \\
+\hline
+Math 4B & Differential Equations & \\
+Math 19 & Discrete Mathematics & \\
+Psych 2 & Experimental Psychophysiology & Experiment Design \& Paper \\
+Phys 4D & Modern Physics & Relativity \\
+\end{tabular}
+
+\end{document}
+
+% Local Variables:
+% mode: tex
+% End:
+
