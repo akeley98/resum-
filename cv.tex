@@ -1,8 +1,5 @@
-% PLEASE do not use fonts, bolding, or other formatting; only plain text!
-% This is plain-text LaTeX source. I'm only calling it .rtf so Google Docs
-% doesn't give a BS 'file type not supported' error message.
 \documentclass[11pt]{article}
-\usepackage[letterpaper, portrait, margin=3cm]{geometry}
+\usepackage[letterpaper, portrait, margin=20mm]{geometry}
 
 \usepackage{enumitem}
 \usepackage{amsmath}
@@ -12,6 +9,8 @@
 \usepackage[parfill]{parskip}
 \newcommand{\solution}[1]{{{\color{blue}{\bf Solution:} {#1}}}}
 \usepackage[usenames,dvipsnames,svgnames,table,hyperref]{xcolor}
+\linespread{1.0}
+\setlength{\parskip}{1.3mm}
 
 \hyphenation{WebGL}
 
@@ -25,7 +24,7 @@
 
 \section{Work Experience}
 
-\subsection{Undisclosed Cancer Education Game -- July - September 2019}
+\textbf{Undisclosed Cancer Education Game -- July - September 2019}
 \begin{enumerate}
 \item Unity 3D game that simulates tumor growth and provides visualizations
   of tumor response to various treatment options.
@@ -36,7 +35,7 @@
 \item Collaborated with Andrew Leker, Sholari LLC.
 \end{enumerate}
 
-\subsection{Stanford Aetherling Project -- June - September 2018}
+\textbf{Stanford Aetherling Project -- June - September 2018}
 \begin{enumerate}
 \item Aetherling currently aims to support automatic parallelization
   of hardware image pipelines designed using a Haskell intermediate
@@ -49,11 +48,11 @@
 \item Collaborated with David Durst (lead author), Dr. Kayvon
   Fatahalian, and Dr. Pat Hanrahan.
 \end{enumerate}
-\texttt{https://github.com/David-Durst/aetherlingHaskellIR}
+\quad\texttt{https://github.com/David-Durst/aetherlingHaskellIR}
 
-\texttt{https://github.com/David-Durst/aetherling}
+\quad\texttt{https://github.com/David-Durst/aetherling}
 
-\subsection{MediocrePy -- March - June 2017}
+\textbf{MediocrePy -- March - June 2017}
 \begin{enumerate}
 \item Library for reducing stacks of images to a single image using pixel
 means or medians and optional outlier rejection (sigma clipping).
@@ -61,9 +60,9 @@ means or medians and optional outlier rejection (sigma clipping).
   interface.
 \item Collaborated with Dr. Zheng Cai, UC Santa Cruz Astrophysics.
 \end{enumerate}
-\texttt{https://github.com/akeley98/MediocrePy}
+\quad\texttt{https://github.com/akeley98/MediocrePy}
 
-\subsection{Tsinghua Astrophysics -- July - August 2016}
+\textbf{Tsinghua Astrophysics -- July - August 2016}
 \begin{enumerate}
 \item Designed a library for fitting and plotting standard
   microlensing event light curves given a set of brightness
@@ -72,7 +71,7 @@ means or medians and optional outlier rejection (sigma clipping).
 \item Collaborated with Dr. Shude Mao.
 \end{enumerate}
 
-\subsection{Jide Technology Co. -- June - July 2015}
+\textbf{Jide Technology Co. -- June - July 2015}
 \begin{enumerate}
 \item Product testing for RemixOS, an Android derivative with a
   desktop-like interface.
@@ -87,7 +86,7 @@ means or medians and optional outlier rejection (sigma clipping).
 
 \section{Other Projects}
 
-\subsection{WebGL Jelly Cube Project}
+\textbf{WebGL Jelly Cube Project}
 
 Simple mass-spring system simulation written with Javascript,
 WebAssembly, and WebGL 2.0 (for refractive and reflective effects).
@@ -95,9 +94,9 @@ Earned third place in the UCLA computer graphics class contest, Fall
 2017.\footnote{
   https://www.facebook.com/vasilescu.alex/posts/10155206917936588}
 
-\texttt{https://github.com/akeley98/JellyMcJelloFace}
+\quad\texttt{https://github.com/akeley98/JellyMcJelloFace}
 
-\subsection{DementedIGPU -- Linux Nvidia Setup Script}
+\textbf{DementedIGPU -- Linux Nvidia Setup Script}
 
 Laptops with Nvidia graphics cards often work unreliably with the
 GNU/Linux operating system, especially when attempting to switch
@@ -110,65 +109,79 @@ at boot time between high- and low-power graphics.\footnote{This
   Ubuntu 18.04.} I documented the script liberally in order to make it
 as beginner-friendly as a command line application can be.
 
-\texttt{https://github.com/akeley98/DementedIGPU}
+\quad\texttt{https://github.com/akeley98/DementedIGPU}
 
-\section{UCLA Education -- 2017-Present}
+\section{UCLA Education -- September 2017 - August 2020 (Expected)}
 
-First Major: Computer Science
+\textbf{First Major} Computer Science \hfill\textbf{Second Major} Pure
+Mathematics \hfill\textbf{GPA} 3.692 (Feb 2020)
 
-Second Major: Pure Mathematics
-
-GPA: 3.710 (As of November 2019)
-
-Courses Taken:
 
 % Note classes organized by name, not by time.
-\begin{tabular}{l|l|l}
-Number & Title & Content Notes \\
+\textbf{Engineering Courses}
+
+\begin{tabular}{|l l l|}
 \hline
-Math 110A & Algebra & Basic Ring Theory \\
-Math 110AH & Algebra Honors & Group Theory \\
-Math 111 & Theory of Numbers & Overview of p-adic Numbers \\
-Math 115A & Linear Algebra & \\
-Math 120A & Differential Geometry & \\
-Math 131AH & Analysis-Honors & Metric Spaces \\
-Math 131BH & Analysis-Honors & Derivation, Riemann Integration \\
-Math 132H & Complex Analysis Honors & \\
-Math 134 & Systems of Differential Equations& (in progress) \\
-Math 170A & Probability Theory & \\
+ & Title (\textit{In Progress}) & Content Notes \\
+\hline
 EE M16 & Digital Systems & Verilog Lab \\
 EE M116C & Computer Systems Architecture & \\
+CS M152A & Digital Design Lab & Verilog Team Project \\
+\textit{CS 251A} & \textit{Advanced Computer Architecture} & \texttt{gem5} hardware simulator, graduate course \\
+\hline
 CS 35L & Software Construction Lab & POSIX basics (e.g. pthreads, bash) \\
 CS 111 & Operating Systems Principles & Focus on POSIX \\
-CS 118 & Computer Network Fundamentals & (in progress) \\
-CS 130 & Software Engineering & (in progress) Group Project \\
+CS 118 & Computer Network Fundamentals & \\
+CS 130 & Software Engineering & Java Team Project \\
 CS 131 & Programming Languages & \\
+\textit{CS 133} & \textit{Parallel \& Distributed Computing} & OpenMP, OpenCL, MPI, GPGPU, FPGA \\
 CS M146 & Machine Learning & \\
-CS M152A & Digital Design Lab & Verilog Team Project \\
 CS 161 & Fundamentals of Artificial Intelligence & \\
 CS 174A & Intro to Computer Graphics & See WebGL Jelly Cube Project \\
 CS 180 & Algorithms \& Complexity & \\
-CS 181 & Formal Languages\footnotemark & Regex, CFG, Turing Machines, Decidability \\
-Engr 185EW & Art of Engineering Endeavors & Writing Intensive Group Project
+CS 181 & Formal Languages \& Automata & Regex, CFG, Turing Machines, Decidability \\
+\hline
+Engr 185EW & Art of Engineering Endeavors & Writing Intensive Team Project \\
+\hline
 \end{tabular}
 %\footnotetext{Full title: Linear and Nonlinear Systems of Differential Equations}
-\footnotetext{Full title: Introduction to Formal
-Languages and Automata Theory}
+%\footnotetext{Full title: Introduction to Formal
+%Languages and Automata Theory}
 
 \newpage
+\textbf{Mathematics Courses}
+
+\begin{tabular}{|l l l|}
+\hline
+ & Title (\textit{In Progress}) & Content Notes \\
+\hline
+Math 110A & Algebra & Ring Theory \\
+Math 110AH & Algebra Honors & Group Theory \\
+\textit{Math 110BH} & \textit{Algebra Honors} & Ring Theory, Module Theory \\
+Math 111 & Theory of Numbers & Overview of p-adic Numbers \\
+Math 115A & Linear Algebra & \\
+Math 120A & Differential Geometry & \\
+Math 131AH & Analysis Honors & Metric Spaces \\
+Math 131BH & Analysis Honors & Derivation, Riemann Integration \\
+Math 132H & Complex Analysis Honors & \\
+Math 134 & Systems of Differential Equations & \\
+Math 170A & Probability Theory & \\
+\hline
+\end{tabular}
+
 \section{West Valley College Education -- 2015-2017}
 
-GPA: 4.0 (upon transferring to UCLA)
+\textbf{GPA} 4.0 (upon transferring to UCLA)
 
-Select Courses Taken
-
-\begin{tabular}{l|l|l}
-Number & Title & Content Notes \\
+\begin{tabular}{|l l l|}
+\hline
+ & Title & Content Notes \\
 \hline
 Math 4B & Differential Equations & \\
 Math 19 & Discrete Mathematics & \\
 Psych 2 & Experimental Psychophysiology & Experiment Design \& Paper \\
 Phys 4D & Modern Physics & Relativity \\
+\hline
 \end{tabular}
 
 \end{document}
@@ -176,4 +189,3 @@ Phys 4D & Modern Physics & Relativity \\
 % Local Variables:
 % mode: tex
 % End:
-
