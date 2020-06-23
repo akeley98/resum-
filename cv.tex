@@ -26,7 +26,7 @@ UCLA Engineering undergraduate
 
 
 \textbf{Majors} Computer Science, Mathematics
-\hfill \textbf{GPA} 3.726
+\hfill \textbf{GPA} 3.745 % Also update below (1/2)
 \hfill \textbf{Expected Graduation} August 2020
 
 \textbf{Select Engineering Courses} Parallel \& Distributed Computing,
@@ -130,11 +130,34 @@ as beginner-friendly as a command line application can be.
 
 \quad\texttt{https://github.com/akeley98/DementedIGPU}
 
+\textbf{Myricube -- Experimental OpenGL Voxel Renderer (WIP)}
+
+This experiment in hybrid raycast/mesh voxel renderering was inspired
+by my discontent with Minecraft's low render distance, even on high
+settings.
+
+Conventional voxel renderers such as Minecraft's work by converting
+voxel models into a mesh of triangles to draw, possibly with some
+optimizations like hidden face removal or merging coplanar
+triangles. This uses the GPU for its designed purpose, but as render
+distance increases, the GPU is bottlenecked by the large number of
+small triangles generated. Myricube uses conventional mesh rendering
+for nearby voxels but draws more distant voxels with an alternative
+raycasting renderer. This renderer subdivides the voxel model into
+cubic chunks, computes a minimal AABB\footnote{axis alligned bounding
+  box} for each chunk's visible voxels, and draws the AABBs themselves
+with raycasting fragment shader that only checks for intersections
+within the drawn AABB.  Dividing the model into AABBs reduces my
+renderer's memory bandwidth requirements and time wasted raycasting
+through empty space, compared to a conventional raycasting renderer.
+
+\texttt{https://github.com/akeley98/myricube}
+
 \newpage
 \section{UCLA Education -- September 2017 - August 2020 (Expected)}
 
 \textbf{First Major} Computer Science \hfill\textbf{Second Major}
-Mathematics \hfill\textbf{GPA} 3.726 (April 2020) % Update
+Mathematics \hfill\textbf{GPA} 3.745 (April 2020) % Update (2/2)
 
 
 % Note classes organized by name, not by time.
@@ -178,15 +201,17 @@ Engr 185EW & Art of Engineering Endeavors & Writing Intensive Team Project \\
 Math 110A & Algebra & Ring Theory \\
 Math 110AH & Algebra Honors & Group Theory \\
 Math 110BH & Algebra Honors & Ring Theory, Module Theory \\
-\textit{Math 110C} & \textit{Algebra} & \textit{Field Theory, Galois Theory} \\
+Math 110C & Algebra & Field Theory, Galois Theory \\
 Math 111 & Theory of Numbers & Overview of p-adic Numbers \\
 Math 115A & Linear Algebra & \\
-\textit{Math 115B} & \textit{Linear Algebra} & \\
+Math 115B & Linear Algebra & \\
 Math 120A & Differential Geometry & \\
 Math 131AH & Analysis Honors & Metric Spaces \\
 Math 131BH & Analysis Honors & Derivation, Riemann Integration \\
 Math 132H & Complex Analysis Honors & \\
 Math 134 & Systems of Differential Equations & \\
+\textit{Math 142} & \textit{Mathematical Modeling} & \\
+\textit{Math 167} & \textit{Game Theory} & \\
 Math 170A & Probability Theory & \\
 \hline
 \end{tabular}
