@@ -24,7 +24,7 @@
 \newcommand{\myTitle}[1]{\vspace{2mm}{ \LARGE \color{titleColor} \textsf{#1}\vspace{2mm}}}
 \definecolor{subColor}{RGB}{170, 96, 120}
 \newcommand{\mySub}[1]{{\color{subColor}$\times$\hspace{1mm}\textsf{#1}}}
-\definecolor{keyColor}{RGB}{50, 50, 70}
+\definecolor{keyColor}{RGB}{100, 80, 30}
 \newcommand{\myKey}[1]{{\color{keyColor}\textbf{#1}}}
 
 \begin{document}
@@ -64,20 +64,23 @@ Advanced Computer Architecture
 \mySub{Stanford Aetherling Project -- June - September 2018 --
   Research Assistant}
 \begin{enumerate}
-\item Aetherling currently aims to support automatic parallelization
-  of hardware image pipelines designed using a Haskell intermediate
-  representation.
-\item Contributed to Aetherling's functional simulator and worked to
-  remove impediments to parallelizing Aetherling line
-  buffers.\footnote{A line buffer device reads in an image as a stream
-    of pixel values and outputs rectangular portions (``windows'') of
-    the image.}
+\item Aetherling supports automatic parallelization and static
+  scheduling\footnote{i.e. not using ready-valid hardware interfaces.}
+  of hardware image processing pipelines designed using a
+  Haskell-embedded domain-specific language.
+\item Contributed to the functional simulator of an early prototype of
+  Aetherling and worked to remove impediments to parallelizing the
+  prototype's line buffers.\footnote{A line buffer device reads in an
+    image as a stream of pixel values and outputs rectangular portions
+    (``windows'') of the image.}
 \item Collaborated with David Durst (lead author), Dr. Kayvon
   Fatahalian, and Dr. Pat Hanrahan.
 \end{enumerate}
-\web{https://github.com/David-Durst/aetherlingHaskellIR}
+\web{https://aetherling.org}
 
 \web{https://github.com/David-Durst/aetherling}
+
+\web{https://github.com/David-Durst/aetherlingHaskellIR} (early prototype)
 
 \mySub{MediocrePy -- March - June 2017 -- Independent Project}
 \begin{enumerate}
@@ -276,6 +279,13 @@ Psych 2 & Experimental Psychophysiology & Experiment Design \& Paper \\
 Phys 4D & Modern Physics & Relativity \\
 \hline
 \end{tabular}
+
+\vspace{10mm}
+{
+\begin{center}
+\textsf{Ubuntu}, \texttt{Ubuntu Mono} font by Dalton Maag and Canonical Ltd.
+\end{center}
+}
 
 \end{document}
 
