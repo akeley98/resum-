@@ -6,49 +6,62 @@
 \usepackage{placeins}
 \usepackage{graphicx}
 \usepackage{caption}
+\usepackage{xcolor}
 \usepackage[parfill]{parskip}
-\newcommand{\solution}[1]{{{\color{blue}{\bf Solution:} {#1}}}}
-\usepackage[usenames,dvipsnames,svgnames,table,hyperref]{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fontspec}
 \linespread{1.0}
 \setlength{\parskip}{1mm}
 
+\setsansfont{Ubuntu}
+\setmonofont{Ubuntu Mono}
+
 \hyphenation{WebGL}
+
+\definecolor{webColor}{RGB}{0, 110, 180}
+\newcommand{\web}[1]{{ \color{webColor} \small \url{#1}}}
+\definecolor{titleColor}{RGB}{170, 30, 120}
+\newcommand{\myTitle}[1]{\vspace{2mm}{ \LARGE \color{titleColor} \textsf{#1}\vspace{2mm}}}
+\definecolor{subColor}{RGB}{170, 96, 120}
+\newcommand{\mySub}[1]{{\color{subColor}$\times$\hspace{1mm}\textsf{#1}}}
+\definecolor{keyColor}{RGB}{50, 50, 70}
+\newcommand{\myKey}[1]{{\color{keyColor}\textbf{#1}}}
 
 \begin{document}
 
 \begin{center}
-\Large{\textbf{Resum\'e}}
+\myTitle{Resum\'e}
 
-\normalsize David Zhao Akeley
+{ \color{subColor} \textsf{David Zhao Akeley}
 
-UCLA Engineering undergraduate
+\textsf{UCLA Engineering undergraduate} }
 \end{center}
 
 
-\textbf{Majors} Computer Science, Mathematics
-\hfill \textbf{GPA} 3.745 % Also update below (1/2)
-\hfill \textbf{Expected Graduation} August 2020
+\myKey{Majors} Computer Science, Mathematics
+\hfill \myKey{GPA} 3.745 % Also update below (1/2)
+\hfill \myKey{Expected Graduation} August 2020
 
-\textbf{Select Engineering Courses} Parallel \& Distributed Computing,
+\myKey{Select Engineering Courses} Parallel \& Distributed Computing,
 Advanced Computer Architecture
 
-\textbf{Select Mathematics Courses} Complex Analysis Honors, Algebra Honors
+\myKey{Select Mathematics Courses} Complex Analysis Honors, Algebra Honors
 
-\section{Work Experience}
+\myTitle{Work Experience}
 
-\textbf{Sholari LLC -- July - September 2019 -- Contractor}
+\mySub{Sholari LLC -- July - September 2019 -- Contractor}
 \begin{enumerate}
 \item Worked on a Unity 3D game that simulates tumor growth and
   provides visualizations of tumor response to various treatment
   options.
 \item Implemented line graphs, waterfall (bar) plots, and the user
   interface for the timeline (graph x-axis).
-\item Wrote a multithreaded C++11 plugin for visualizing tumors \&
-  immune system responses as particle clouds, and integrated it with
-  the single-threaded C-sharp Unity Engine.
+\item Wrote a multithreaded \texttt{C++11} plugin for visualizing
+  tumors \& immune system responses as particle clouds, and integrated
+  it with the single-threaded \texttt{C\#} Unity Engine.
 \end{enumerate}
 
-\textbf{Stanford Aetherling Project -- June - September 2018 --
+\mySub{Stanford Aetherling Project -- June - September 2018 --
   Research Assistant}
 \begin{enumerate}
 \item Aetherling currently aims to support automatic parallelization
@@ -62,11 +75,11 @@ Advanced Computer Architecture
 \item Collaborated with David Durst (lead author), Dr. Kayvon
   Fatahalian, and Dr. Pat Hanrahan.
 \end{enumerate}
-\quad\texttt{https://github.com/David-Durst/aetherlingHaskellIR}
+\web{https://github.com/David-Durst/aetherlingHaskellIR}
 
-\quad\texttt{https://github.com/David-Durst/aetherling}
+\web{https://github.com/David-Durst/aetherling}
 
-\textbf{MediocrePy -- March - June 2017 -- Independent Project}
+\mySub{MediocrePy -- March - June 2017 -- Independent Project}
 \begin{enumerate}
 \item Created an optimized library for reducing stacks of telescope
   images to a single image using pixel means or medians and optional
@@ -76,9 +89,9 @@ Advanced Computer Architecture
   implementation replaced) from hours to milliseconds.
 \item Collaborated with Dr. Zheng Cai, UC Santa Cruz Astrophysics.
 \end{enumerate}
-\quad\texttt{https://github.com/akeley98/MediocrePy}
+\web{https://github.com/akeley98/MediocrePy}
 
-\textbf{Tsinghua Astrophysics -- July - August 2016 -- Summer Intern}
+\mySub{Tsinghua Astrophysics -- July - August 2016 -- Summer Intern}
 \begin{enumerate}
 \item Designed a library for fitting and plotting standard
   microlensing event light curves given a set of brightness
@@ -87,7 +100,7 @@ Advanced Computer Architecture
 \item Collaborated with Dr. Shude Mao.
 \end{enumerate}
 
-\textbf{Jide Technology Co. -- June - July 2015 -- Summer Intern}
+\mySub{Jide Technology Co. -- June - July 2015 -- Summer Intern}
 \begin{enumerate}
 \item Product testing for RemixOS, an Android derivative with a
   desktop-like interface.
@@ -98,21 +111,21 @@ Advanced Computer Architecture
   Marketing Manager).
 \end{enumerate}
 
-\section{Other Projects}
+\newpage
+\myTitle{Other Projects}
 
-\textbf{WebGL Jelly Cube Project}
+\mySub{WebGL Jelly Cube Project}
 
 Simple mass-spring system simulation written with Javascript,
 WebAssembly, and WebGL 2.0 (for refractive and reflective effects).
 Earned third place in the UCLA computer graphics class contest, Fall
 2017.\footnote{
-  https://www.facebook.com/vasilescu.alex/posts/10155206917936588}
+  \web{https://www.facebook.com/vasilescu.alex/posts/10155206917936588}}
 
-\quad\texttt{https://github.com/akeley98/JellyMcJelloFace}
+\web{https://github.com/akeley98/JellyMcJelloFace}
+\hfill\web{https://youtu.be/YwvMSeB6NzU}
 
-\quad\texttt{https://youtu.be/YwvMSeB6NzU}
-
-\textbf{DementedIGPU -- Linux Nvidia Setup Script}
+\mySub{DementedIGPU -- Linux Nvidia Setup Script}
 
 (Unfortunately, this project no longer works due to Bumblebee's
 end-of-support).
@@ -128,9 +141,9 @@ at boot time between high- and low-power graphics.\footnote{This
   Ubuntu 18.04.} I documented the script liberally in order to make it
 as beginner-friendly as a command line application can be.
 
-\quad\texttt{https://github.com/akeley98/DementedIGPU}
+\web{https://github.com/akeley98/DementedIGPU}
 
-\textbf{Myricube -- Experimental OpenGL Voxel Renderer (WIP)}
+\mySub{Myricube -- Experimental OpenGL Voxel Renderer (WIP)}
 
 This experiment in hybrid raycast/mesh voxel renderering was inspired
 by my discontent with Minecraft's low render distance, even on high
@@ -146,18 +159,47 @@ for nearby voxels but draws more distant voxels with an alternative
 raycasting renderer. This renderer subdivides the voxel model into
 cubic chunks, computes a minimal AABB\footnote{axis alligned bounding
   box} for each chunk's visible voxels, and draws the AABBs themselves
-with raycasting fragment shader that only checks for intersections
+with a raycasting fragment shader that only checks for intersections
 within the drawn AABB.  Dividing the model into AABBs reduces my
 renderer's memory bandwidth requirements and time wasted raycasting
 through empty space, compared to a conventional raycasting renderer.
 
-\texttt{https://github.com/akeley98/myricube}
+\web{https://github.com/akeley98/myricube}
+
+\mySub{Proposed gem5 Hardware Simulator Partial Bypassing Patch}
+
+This patch is a refactoring of the \texttt{C++} code I wrote as part
+of my UCLA ``Advanced Computer Architecture'' course project.
+
+In an out-of-order CPU, hardware bypassing allows instructions stalled
+waiting for a register to start execution as soon as the functional
+unit (ALU, memory port, etc.) writing to said register completes,
+without waiting for the actual commitment to register file. This is
+crucial for performance, so mainline \texttt{gem5} simulates complete
+bypassing between all functional units in the simulated CPU. However,
+this is not practical to realize in modern superscalar hardware, as
+bypassing costs grow quadratically with the number of functional
+units. My patch splits the CPU's functional units into separate pools,
+with bypassing simulated only between pools. The
+commit-to-register-file delay is imposed for values communicated
+between pools.
+
+Although the patch received positive code reviews, it doesn't look
+like there's enough interest in the feature to actually merge it into
+mainline \texttt{gem5}.
+
+\web{https://gem5-review.googlesource.com/c/public/gem5/+/27767}
+
+{
+\small
+\web{https://github.com/akeley98/FU-pools/blob/b4d291429edb6aa4988888656b6867ff99591b90/fu-pools.pdf}
+}
 
 \newpage
-\section{UCLA Education -- September 2017 - August 2020 (Expected)}
+\myTitle{UCLA Education -- September 2017 - August 2020 (Expected)}
 
-\textbf{First Major} Computer Science \hfill\textbf{Second Major}
-Mathematics \hfill\textbf{GPA} 3.745 (April 2020) % Update (2/2)
+\myKey{First Major} Computer Science \hfill\myKey{Second Major}
+Mathematics \hfill\myKey{GPA} 3.745 (April 2020) % Update (2/2)
 
 
 % Note classes organized by name, not by time.
@@ -218,11 +260,11 @@ Math 170A & Probability Theory & \\
 
 \textit{Note: There is no honors equivalent to the Field Theory Course.}
 
-\section{West Valley College Education -- 2015-2017}
+\myTitle{West Valley College Education -- 2015-2017}
 
-\textbf{GPA} 4.0 (upon transferring to UCLA)
+\myKey{GPA} 4.0 (upon transferring to UCLA)
 
-\textbf{Select Courses}
+\myKey{Select Courses}
 
 \begin{tabular}{l l l}
 \hline
