@@ -99,7 +99,7 @@ Advanced Computer Architecture
 \item Designed a library for fitting and plotting standard
   microlensing event light curves given a set of brightness
   data for a star.
-\item Used Python, C++, SciPy, Matplotlib.
+\item Used Python, \texttt{C++}, SciPy, Matplotlib.
 \item Collaborated with Dr. Shude Mao.
 \end{enumerate}
 
@@ -160,12 +160,13 @@ distance increases, the GPU is bottlenecked by the large number of
 small triangles generated. Myricube uses conventional mesh rendering
 for nearby voxels but draws more distant voxels with an alternative
 raycasting renderer. This renderer subdivides the voxel model into
-cubic chunks, computes a minimal AABB\footnote{axis alligned bounding
-  box} for each chunk's visible voxels, and draws the AABBs themselves
-with a raycasting fragment shader that only checks for intersections
-within the drawn AABB.  Dividing the model into AABBs reduces my
-renderer's memory bandwidth requirements and time wasted raycasting
-through empty space, compared to a conventional raycasting renderer.
+cubic chunks, computes a minimal AABB\footnote{Axis aligned bounding
+  box -- requires only 12 triangles to draw.} for each chunk's visible
+voxels, and draws the AABBs themselves with a raycasting fragment
+shader that only checks for intersections within the drawn AABB.
+Dividing the model into AABBs reduces my renderer's memory bandwidth
+requirements and time wasted raycasting through empty space, compared
+to a conventional raycasting renderer.
 
 \web{https://github.com/akeley98/myricube}
 
@@ -193,10 +194,7 @@ mainline \texttt{gem5}.
 
 \web{https://gem5-review.googlesource.com/c/public/gem5/+/27767}
 
-{
-\small
 \web{https://github.com/akeley98/FU-pools/blob/b4d291429edb6aa4988888656b6867ff99591b90/fu-pools.pdf}
-}
 
 \newpage
 \myTitle{UCLA Education -- September 2017 - August 2020 (Expected)}
