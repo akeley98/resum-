@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{xcolor}
+\usepackage{colortbl}
 \usepackage[parfill]{parskip}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fontspec}
@@ -20,12 +21,14 @@
 
 \definecolor{webColor}{RGB}{0, 110, 180}
 \newcommand{\web}[1]{{ \color{webColor} \small \url{#1}}}
-\definecolor{titleColor}{RGB}{140, 70, 110}
+\definecolor{titleColor}{RGB}{140, 70, 150}
 \newcommand{\myTitle}[1]{\vspace{2mm}{ \LARGE \color{titleColor} \textsf{#1}\vspace{2mm}}}
 \definecolor{subColor}{RGB}{140, 40, 110}
 \newcommand{\mySub}[1]{{\color{subColor}\hspace{-6mm} \( \times \)\ \textsf{#1}}}
 \definecolor{keyColor}{RGB}{100, 80, 30}
 \newcommand{\myKey}[1]{{\color{keyColor}\textbf{#1}}}
+\definecolor{oddColor}{RGB}{245, 240, 250}
+\definecolor{evenColor}{RGB}{240, 240, 240}
 
 \newcommand{\GPA}{3.745}
 \newcommand{\GpaDate}{July 2020}
@@ -206,67 +209,92 @@ mainline \texttt{gem5}.
 Mathematics \hfill\myKey{GPA} \GPA\ (\GpaDate)
 
 
-% Note classes organized by name, not by time.
+% Classes now organized by quarter.
 % \textbf{Engineering Courses}
+\makebox[\textwidth][c]{
+\begin{tabular}{l l l l}
+\hline
+ & & Title & Content Notes \\
+\hline
+\rowcolor{oddColor}
+A+ & CS 174A & Intro to Computer Graphics & See WebGL Jelly Cube Project \\
+\rowcolor{oddColor}
+A+ & EE M16 & Digital Systems & Verilog Lab \\
+\rowcolor{oddColor}
+A+ & Math 115A & Linear Algebra & \\
+\rowcolor{oddColor}
+A  & Math 170A & Probability Theory & \\
 
-\begin{tabular}{l l l}
-\hline
- & Title (\textit{In Progress}) & Content Notes \\
-\hline
-EE M16 & Digital Systems & Verilog Lab \\
-EE M116C & Computer Systems Architecture & \\
-CS M152A & Digital Design Lab & Verilog Team Project \\
-CS 251A & Advanced Computer Architecture & \texttt{gem5} Hardware Sim Project, Graduate Course \\
-\hline
-CS 35L & Software Construction Lab & POSIX basics (e.g. pthreads, bash) \\
-CS 111 & Operating Systems Principles & Focus on POSIX \\
-CS 118 & Computer Network Fundamentals & \\
-CS 130 & Software Engineering & Java Team Project \\
-CS 131 & Programming Languages & \\
-CS 133 & Parallel \& Distributed Computing & OpenMP, OpenCL, MPI, GPGPU, FPGA \\
-CS M146 & Machine Learning & \\
-CS 161 & Fundamentals of Artificial Intelligence & \\
-CS 174A & Intro to Computer Graphics & See WebGL Jelly Cube Project \\
-CS 180 & Algorithms \& Complexity & \\
-CS 181 & Formal Languages \& Automata & Regex, CFG, Turing Machines, Decidability \\
-\hline
-Engr 185EW & Art of Engineering Endeavors & Writing Intensive Team Project \\
-\hline
-%% \end{tabular}
-%% %\footnotetext{Full title: Linear and Nonlinear Systems of Differential Equations}
-%% %\footnotetext{Full title: Introduction to Formal
-%% %Languages and Automata Theory}
+\rowcolor{evenColor}
+A  & CS 35L & Software Construction Lab & POSIX basics (e.g. pthreads, bash) \\
+\rowcolor{evenColor}
+A  & CS M146 & Machine Learning & \\
+\rowcolor{evenColor}
+A  & Math 110A & Algebra & Ring Theory \\
+\rowcolor{evenColor}
+A  & Math 131AH & Analysis Honors & Metric Spaces \\
 
-%% \newpage
-%% \textbf{Mathematics Courses}
+\rowcolor{oddColor}
+A+ & CS 180 & Algorithms \& Complexity & \\
+\rowcolor{oddColor}
+A  & Engr 185EW & Art of Engineering Endeavors & Writing Intensive Team Project \\
+\rowcolor{oddColor}
+A  & Math 131BH & Analysis Honors & Derivation, Riemann Integration \\
 
-%% \begin{tabular}{l l l}
-%% \hline
-%%  & Title (\textit{In Progress}) & Content Notes \\
-%% \hline
-Math 110A & Algebra & Ring Theory \\
-Math 110AH & Algebra Honors & Group Theory \\
-Math 110BH & Algebra Honors & Ring Theory, Module Theory \\
-Math 110C & Algebra & Field Theory, Galois Theory \\
-Math 111 & Theory of Numbers & Overview of p-adic Numbers \\
-Math 115A & Linear Algebra & \\
-Math 115B & Linear Algebra & \\
-Math 120A & Differential Geometry & \\
-Math 131AH & Analysis Honors & Metric Spaces \\
-Math 131BH & Analysis Honors & Derivation, Riemann Integration \\
-Math 132H & Complex Analysis Honors & \\
-Math 134 & Systems of Differential Equations & \\
-\textit{Math 142} & \textit{Mathematical Modeling} & \\
-\textit{Math 167} & \textit{Game Theory} & \\
-Math 170A & Probability Theory & \\
-\hline
+\rowcolor{evenColor}
+B- & CS 131 & Programming Languages & \\
+\rowcolor{evenColor}
+B+ & CS M152A & Digital Design Lab & Verilog Team Project \\
+\rowcolor{evenColor}
+B+ & Math 110AH & Algebra Honors & Group Theory \\
+\rowcolor{evenColor}
+C  & Math 120A & Differential Geometry & \\
+
+\rowcolor{oddColor}
+A- & CS 111 & Operating Systems Principles & Focus on POSIX \\
+\rowcolor{oddColor}
+A+ & CS 181 & Formal Languages \& Automata & Regex, CFG, Turing Machines, Decidability \\
+\rowcolor{oddColor}
+A- & Math 132H & Complex Analysis Honors & \\
+
+\rowcolor{evenColor}
+A- & CS 161 & Fundamentals of Artificial Intelligence & \\
+\rowcolor{evenColor}
+A+ & EE M116C & Computer Systems Architecture & \\
+\rowcolor{evenColor}
+B+ & Math 111 & Theory of Numbers & Overview of p-adic Numbers \\
+
+\rowcolor{oddColor}
+A- & CS 118 & Computer Network Fundamentals & \\
+\rowcolor{oddColor}
+B  & CS 130 & Software Engineering & Java Team Project \\
+\rowcolor{oddColor}
+A  & Math 134 & Systems of Differential Equations & \\
+
+\rowcolor{evenColor}
+A+ & CS 133 & Parallel \& Distributed Computing & OpenMP, OpenCL, MPI, GPGPU, FPGA \\
+\rowcolor{evenColor}
+A+ & CS 251A & Advanced Computer Architecture & \texttt{gem5} Hardware Sim Project, Graduate Course \\
+\rowcolor{evenColor}
+A  & Math 110BH & Algebra Honors & Ring Theory, Module Theory \\
+
+\rowcolor{oddColor}
+A  & Math 110C & Algebra & Field Theory, Galois Theory \\
+\rowcolor{oddColor}
+A  & Math 115B & Linear Algebra & \\
+
+\rowcolor{evenColor}
+\textit{IP} & Math 142 & \textit{Mathematical Modeling} & \\
+\rowcolor{evenColor}
+\textit{IP} & Math 167 & \textit{Game Theory} & \\
 \end{tabular}
+}
 
 \textit{Note: There is no honors equivalent to the Field Theory Course.}
 
 \myTitle{West Valley College Education -- 2015-2017}
 
-\myKey{GPA} 4.0 (upon transferring to UCLA)
+\myKey{GPA} 4.0
 
 \myKey{Select Courses}
 
@@ -274,10 +302,11 @@ Math 170A & Probability Theory & \\
 \hline
  & Title & Content Notes \\
 \hline
-Math 4B & Differential Equations & \\
-Math 19 & Discrete Mathematics & \\
+\rowcolor{oddColor} Math 4B & Differential Equations & \\
+\rowcolor{oddColor} Math 19 & Discrete Mathematics & \\
+\rowcolor{oddColor}
 Psych 2 & Experimental Psychophysiology & Experiment Design \& Paper \\
-Phys 4D & Modern Physics & Relativity \\
+\rowcolor{oddColor} Phys 4D & Modern Physics & Relativity \\
 \hline
 \end{tabular}
 
