@@ -19,8 +19,9 @@
 
 \hyphenation{WebGL}
 
-\definecolor{webColor}{RGB}{0, 110, 180}
+\definecolor{webColor}{RGB}{0, 72, 180}
 \newcommand{\web}[1]{{ \color{webColor} \small \url{#1}}}
+\newcommand{\webText}[2]{{\color{webColor} \href{#1}{#2}}}
 \definecolor{titleColor}{RGB}{140, 70, 150}
 \newcommand{\myTitle}[1]{\vspace{2mm}{ \LARGE \color{titleColor} \textsf{#1}\vspace{2mm}}}
 \definecolor{subColor}{RGB}{140, 40, 110}
@@ -30,8 +31,8 @@
 \definecolor{oddColor}{RGB}{245, 240, 250}
 \definecolor{evenColor}{RGB}{240, 240, 240}
 
-\newcommand{\GPA}{3.745}
-\newcommand{\GpaDate}{July 2020}
+\newcommand{\GPA}{3.762}
+\newcommand{\GpaDate}{August 2020}
 
 \begin{document}
 \reversemarginpar
@@ -39,52 +40,55 @@
 \myTitle{David Zhao Akeley}
 
 \vspace{-2.5mm}
-{ \color{subColor} \textsf{UCLA Engineering undergraduate} }
+{ \color{subColor} \textsf{UCLA Engineering Undergraduate} }
 \end{center}
-
 
 \myKey{Majors} Computer Science, Mathematics
 \hfill \myKey{GPA} \GPA
 \hfill \myKey{Expected Graduation} August 2020
 
 \myKey{Select Engineering Courses} Parallel \& Distributed Computing,
-Advanced Computer Architecture
+Advanced Computer Architecture, Machine Learning, Algorithms \&
+Complexity, Formal Languages \& Automata
 
-\myKey{Select Mathematics Courses} Complex Analysis Honors, Algebra Honors
+\myKey{Select Mathematics Courses} Linear Algebra, Complex Analysis
+Honors, Algebra Honors, Galois Theory, Mathematical Modeling
 \vspace{3mm}
 
 \myTitle{Work Experience}
 
 \mySub{Sholari LLC -- July - September 2019 -- Contractor}
 \begin{enumerate}
-\item Worked on a Unity 3D game that simulates tumor growth and
-  provides visualizations of tumor response to various treatment
-  options.
-\item Implemented line graphs, waterfall (bar) plots, and the user
-  interface for the timeline (graph x-axis).
+\item Worked on a tumor growth and treatment simulator written with
+  the Unity game engine.
+\item Implemented tools for visualizing tumor responses to treatments:
+  line graphs, waterfall (bar) plots, and the user interface for the
+  timeline (graph x-axis).
 \item Wrote a multithreaded \texttt{C++11} plugin for visualizing
   tumors \& immune system responses as particle clouds, and integrated
   it with the single-threaded \texttt{C\#} Unity Engine.
 \end{enumerate}
 
-\mySub{Stanford Aetherling Project -- June - September 2018 --
+\mySub{Stanford University -- June - September 2018 --
   Research Assistant}
 \begin{enumerate}
+\item Undergraduate co-author of Aetherling with
+  \webText{https://david-durst.github.io/}{David Durst} (lead author),
+  \webText{https://graphics.stanford.edu/~kayvonf/}{Dr. Kayvon Fatahalian},
+  and \webText{https://graphics.stanford.edu/~hanrahan/}{Dr. Pat Hanrahan}.
 \item Aetherling supports automatic parallelization and static
   scheduling\footnote{i.e. not using ready-valid hardware interfaces.}
   of hardware image processing pipelines designed using a
   Haskell-embedded domain-specific language.
 \item Contributed to the functional simulator of an early prototype of
-  Aetherling and worked to remove impediments to parallelizing the
-  prototype's line buffers.\footnote{A line buffer device reads in an
-    image as a stream of pixel values and outputs rectangular portions
-    (``windows'') of the image.}
-\item Collaborated with David Durst (lead author), Dr. Kayvon
-  Fatahalian, and Dr. Pat Hanrahan.
+  Aetherling and revised the Aetherling type system to remove
+  impediments to parallelizing the prototype's line
+  buffers.\footnote{A line buffer device reads in an image as a stream
+    of pixel values and outputs rectangular portions (``windows'') of
+    the image.}
 \end{enumerate}
-\quad\web{https://aetherling.org}
-
-\quad\web{https://github.com/David-Durst/embeddedHaskellAetherling}
+\quad\web{https://aetherling.org} (paper link)
+\quad\quad\web{https://github.com/David-Durst/embeddedHaskellAetherling}
 
 \quad\web{https://github.com/David-Durst/aetherlingHaskellIR} (early prototype)
 
@@ -96,25 +100,30 @@ Advanced Computer Architecture
 \item Multithreaded C core with AVX vectorization; C and Python
   (numpy) interface. Decreased runtime (compared to the Python
   implementation replaced) from hours to milliseconds.
-\item Collaborated with Dr. Zheng Cai, UC Santa Cruz Astrophysics.
+\item Collaborated with
+  \webText{http://sancerre.as.arizona.edu/~caiz/Home/Welcome.html}{Dr. Zheng
+    Cai}, UC Santa Cruz Astrophysics.
 \end{enumerate}
 \quad\web{https://github.com/akeley98/MediocrePy}
 
-\mySub{Tsinghua Astrophysics -- July - August 2016 -- Summer Intern}
+\mySub{Tsinghua University -- July - August 2016 -- Summer Intern}
 \begin{enumerate}
-\item Designed a library for fitting and plotting standard
-  microlensing event light curves given a set of brightness
-  data for a star.
+\item Designed a small library for fitting and plotting standard
+  microlensing event light curves given discrete measurements of a
+  star's apparent magnitude (brightness) through time.
 \item Used Python, \texttt{C++}, SciPy, Matplotlib.
-\item Collaborated with Dr. Shude Mao.
+\item Collaborated with
+  \webText{http://astro.tsinghua.edu.cn/~smao/}{Dr. Shude Mao},
+  Tsinghua Department of Astronomy.
 \end{enumerate}
 
 \mySub{Jide Technology Co. -- June - July 2015 -- Summer Intern}
 \begin{enumerate}
-\item Product testing for RemixOS, an Android derivative with a
-  desktop-like interface.
+\item Performed product testing for RemixOS, an Android derivative
+  with a desktop-like interface.
 
-\item Wrote international marketing \& documentation in English.
+\item Edited international marketing material and wrote user
+  documentation in English.
 
 \item Collaborated with Jason Zheng and Jeff Zhao (International
   Marketing Manager).
@@ -134,24 +143,6 @@ Earned third place in the UCLA computer graphics class contest, Fall
 \web{https://github.com/akeley98/JellyMcJelloFace}
 \hfill\web{https://youtu.be/YwvMSeB6NzU}
 
-\mySub{DementedIGPU -- Linux Nvidia Setup Script}
-
-(Unfortunately, this project no longer works due to Bumblebee's
-end-of-support).
-
-Laptops with Nvidia graphics cards often work unreliably with the
-GNU/Linux operating system, especially when attempting to switch
-between high-performance discrete graphics and low-power integrated
-graphics. I wrote a Python 3 script that automatically installs and
-configures software needed to provide a (relatively) reliable option
-at boot time between high- and low-power graphics.\footnote{This
-  automation depends on the user using a system with \texttt{apt},
-  \texttt{systemd}, and the \texttt{GRUB} bootloader. Tested with
-  Ubuntu 18.04.} I documented the script liberally in order to make it
-as beginner-friendly as a command line application can be.
-
-\web{https://github.com/akeley98/DementedIGPU}
-
 \mySub{Myricube -- Experimental OpenGL Voxel Renderer (WIP)}
 
 This experiment in hybrid raycast/mesh voxel renderering was inspired
@@ -163,23 +154,26 @@ voxel models into a mesh of triangles to draw, possibly with some
 optimizations like hidden face removal or merging coplanar
 triangles. This uses the GPU for its designed purpose, but as render
 distance increases, the GPU is bottlenecked by the large number of
-small triangles generated. Myricube uses conventional mesh rendering
-for nearby voxels but draws more distant voxels with an alternative
-raycasting renderer. This renderer subdivides the voxel model into
-cubic chunks, computes a minimal AABB\footnote{Axis aligned bounding
-  box -- requires only 12 triangles to draw.} for each chunk's visible
-voxels, and draws the AABBs themselves with a raycasting fragment
-shader that only checks for intersections within the drawn AABB.
-Dividing the model into AABBs reduces my renderer's memory bandwidth
-requirements and time wasted raycasting through empty space, compared
-to a conventional raycasting renderer.
+small triangles generated. Myricube uses conventional\footnote{Well,
+  actually I eventually switched to instanced rendering with
+  \texttt{glDrawElementsInstancedBaseVertexBaseInstance}, but this
+  paragraph is long enough already.} mesh rendering for nearby voxels
+but draws more distant voxels with an alternative raycasting
+renderer. This renderer subdivides the voxel model into cubic chunks,
+computes a minimal AABB\footnote{Axis aligned bounding box -- requires
+  only 12 triangles to draw.} for each chunk's visible voxels, and
+draws the AABBs themselves with a raycasting fragment shader that only
+checks for intersections within the drawn AABB.  Dividing the model
+into AABBs reduces my renderer's memory bandwidth requirements and
+time wasted raycasting through empty space, compared to a conventional
+raycasting renderer.
 
 \web{https://github.com/akeley98/myricube}
 
 \mySub{Proposed gem5 Hardware Simulator Partial Bypassing Patch}
 
-This patch is a refactoring of the \texttt{C++} code I wrote as part
-of my UCLA ``Advanced Computer Architecture'' course project.
+This patch is refactored \texttt{C++11} code that I wrote for my
+Advanced Computer Architecture course project.
 
 In an out-of-order CPU, hardware bypassing allows instructions stalled
 waiting for a register to start execution as soon as the functional
@@ -194,13 +188,29 @@ with bypassing simulated only between pools. The
 commit-to-register-file delay is imposed for values communicated
 between pools.
 
-Although the patch received positive code reviews, it doesn't look
+The patch received positive code reviews; however, it doesn't look
 like there's enough interest in the feature to actually merge it into
 mainline \texttt{gem5}.
 
 \web{https://gem5-review.googlesource.com/c/public/gem5/+/27767}
 
 \web{https://github.com/akeley98/FU-pools/blob/b4d291429edb6aa4988888656b6867ff99591b90/fu-pools.pdf}
+
+\mySub{DementedIGPU -- Linux Nvidia Setup Script}
+
+(Unfortunately, this project no longer works due to Bumblebee's
+end-of-support).
+
+Laptops with Nvidia graphics cards often work unreliably with the
+GNU/Linux operating system, especially when attempting to switch
+between high-performance discrete graphics and low-power integrated
+graphics. I wrote a Python 3 script that automatically installs and
+configures software (via \texttt{apt}) needed to provide a
+(relatively) reliable option in the GRUB boot menu between high- and
+low-power graphics. I documented the script liberally in order to make
+it as beginner-friendly as a command line application can be.
+
+\web{https://github.com/akeley98/DementedIGPU}
 
 \newpage
 \myTitle{UCLA Education -- September 2017 - August 2020 (Expected)}
@@ -279,18 +289,19 @@ A+ & CS 251A & Advanced Computer Architecture & \texttt{gem5} Hardware Sim Proje
 A  & Math 110BH & Algebra Honors & Ring Theory, Module Theory \\
 
 \rowcolor{oddColor}
-A  & Math 110C & Algebra & Field Theory, Galois Theory \\
+A  & Math 110C & Algebra\( ^* \) & Field Theory, Galois Theory \\
 \rowcolor{oddColor}
 A  & Math 115B & Linear Algebra & \\
 
 \rowcolor{evenColor}
-\textit{IP} & Math 142 & \textit{Mathematical Modeling} & \\
+A & Math 142 & Mathematical Modeling & \\
 \rowcolor{evenColor}
-\textit{IP} & Math 167 & \textit{Game Theory} & \\
+A+ & Math 167 & Game Theory & \\
+\hline
 \end{tabular}
 }
 
-\textit{Note: There is no honors equivalent to the Field Theory Course.}
+\textit{\( ^* \)There is no honors equivalent to the Galois Theory Course.}
 
 \myTitle{West Valley College Education -- 2015-2017}
 
