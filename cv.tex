@@ -154,10 +154,10 @@ voxel models into a mesh of triangles to draw, possibly with some
 optimizations like hidden face removal or merging coplanar
 triangles. This uses the GPU for its designed purpose, but as render
 distance increases, the GPU is bottlenecked by the large number of
-small triangles generated. Myricube uses conventional\footnote{Well,
-  actually I eventually switched to instanced rendering with
-  \texttt{glDrawElementsInstancedBaseVertexBaseInstance}, but this
-  paragraph is long enough already.} mesh rendering for nearby voxels
+small triangles generated. Myricube uses conventional mesh
+rendering\footnote{More precisely, instanced rendering using
+  \texttt{glDrawElementsInstancedBaseVertexBaseInstance} to convert
+  subsets of a list of voxels into a mesh to draw.} for nearby voxels
 but draws more distant voxels with an alternative raycasting
 renderer. This renderer subdivides the voxel model into cubic chunks,
 computes a minimal AABB\footnote{Axis aligned bounding box -- requires
