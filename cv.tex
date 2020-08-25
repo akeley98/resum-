@@ -22,8 +22,9 @@
 \definecolor{webColor}{RGB}{0, 72, 180}
 \newcommand{\web}[1]{{ \color{webColor} \small \url{#1}}}
 \newcommand{\webText}[2]{{\color{webColor} \href{#1}{#2}}}
+\newcommand{\email}[2]{{ \small \color{webColor} \textsf{\href{mailto:#1@#2}{#1[at]#2}}}}
 \definecolor{titleColor}{RGB}{140, 70, 150}
-\newcommand{\myTitle}[1]{\vspace{2mm}{ \LARGE \color{titleColor} \textsf{#1}\vspace{2mm}}}
+\newcommand{\myTitle}[1]{{ \vspace{2mm} \LARGE \color{titleColor} \textsf{#1}\vspace{2mm}}}
 \definecolor{subColor}{RGB}{140, 40, 110}
 \newcommand{\mySub}[1]{{\color{subColor}\hspace{-6mm} \( \times \)\ \textsf{#1}}}
 \definecolor{keyColor}{RGB}{100, 80, 30}
@@ -41,11 +42,12 @@
 
 \vspace{-2.5mm}
 { \color{subColor} \textsf{UCLA Engineering Undergraduate} }
+
 \end{center}
 
 \myKey{Majors} Computer Science, Mathematics
-\hfill \myKey{GPA} \GPA
-\hfill \myKey{Expected Graduation} August 2020
+\quad \myKey{GPA} \GPA
+\quad \myKey{Graduated} August 2020
 
 \myKey{Select Engineering Courses} Parallel \& Distributed Computing,
 Advanced Computer Architecture, Machine Learning, Algorithms \&
@@ -53,7 +55,12 @@ Complexity, Formal Languages \& Automata
 
 \myKey{Select Mathematics Courses} Linear Algebra, Complex Analysis
 Honors, Algebra Honors, Galois Theory, Mathematical Modeling
-\vspace{3mm}
+
+\myKey{Primary Email} \email{dza724}{gmail.com}
+\quad \myKey{SMS} \textsf{1-408-763-5241}
+\quad \myKey{Academic Email} \email{akeley98}{ucla.edu}
+
+\vspace{0.1mm}
 
 \myTitle{Work Experience}
 
@@ -213,7 +220,7 @@ it as beginner-friendly as a command line application can be.
 \web{https://github.com/akeley98/DementedIGPU}
 
 \newpage
-\myTitle{UCLA Education -- September 2017 - August 2020 (Expected)}
+\myTitle{UCLA Education -- September 2017 - August 2020}
 
 \myKey{First Major} Computer Science \hfill\myKey{Second Major}
 Mathematics \hfill\myKey{GPA} \GPA\ (\GpaDate)
