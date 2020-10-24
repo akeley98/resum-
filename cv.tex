@@ -24,7 +24,7 @@
 \newcommand{\webText}[2]{{\color{webColor} \href{#1}{#2}}}
 \newcommand{\email}[2]{{\small \color{webColor} \textsf{\href{mailto:#1@#2}{#1[at]#2}}}}
 \definecolor{titleColor}{RGB}{140, 70, 150}
-\newcommand{\myTitle}[1]{{ \vspace{2mm} \LARGE \color{titleColor} \textsf{#1}\vspace{2mm}}}
+\newcommand{\myTitle}[1]{{ \vspace{2mm} \LARGE \color{titleColor} \hspace{-12mm} \( \circ \)\ \textsf{#1} \vspace{2mm}}}
 \definecolor{subColor}{RGB}{140, 40, 110}
 \newcommand{\mySub}[1]{{\color{subColor}\hspace{-6mm} \( \times \)\ \textsf{#1}}}
 \definecolor{keyColor}{RGB}{100, 80, 30}
@@ -38,10 +38,9 @@
 \begin{document}
 \reversemarginpar
 \begin{center}
-\myTitle{David Zhao Akeley}
+\textsf{ \LARGE  \color{titleColor} David Zhao Akeley -- Résumé }
 
-\vspace{-2.5mm}
-{ \color{subColor} \textsf{UCLA Engineering Undergraduate} }
+% { \color{subColor} \textsf{UCLA Engineering Undergraduate} }
 
 \end{center}
 
@@ -63,6 +62,11 @@
 
 \myTitle{Work Experience}
 
+\mySub{Nvidia -- October 2020 - Present -- Developer Technology Engineer}
+\begin{enumerate}
+\item TODO: actually do this job.
+\end{enumerate}
+\filbreak
 \mySub{Sholari LLC -- July - September 2019 -- Contractor}
 \begin{enumerate}
 \item Worked on a tumor growth and treatment simulator written with
@@ -74,7 +78,7 @@
   tumors \& immune system responses as particle clouds, and integrated
   it with the single-threaded \texttt{C\#} Unity Engine.
 \end{enumerate}
-
+\filbreak
 \mySub{Stanford University -- June - September 2018 --
   Research Assistant}
 \begin{enumerate}
@@ -97,7 +101,7 @@
 \quad\quad\web{https://github.com/David-Durst/embeddedHaskellAetherling}
 
 \quad\web{https://github.com/David-Durst/aetherlingHaskellIR} (early prototype)
-
+\filbreak
 \mySub{MediocrePy -- March - June 2017 -- Independent Project}
 \begin{enumerate}
 \item Created an optimized library for reducing stacks of telescope
@@ -111,7 +115,7 @@
     Cai}, UC Santa Cruz Astrophysics.
 \end{enumerate}
 \quad\web{https://github.com/akeley98/MediocrePy}
-
+\filbreak
 \mySub{Tsinghua University -- July - August 2016 -- Summer Intern}
 \begin{enumerate}
 \item Designed a small library for fitting and plotting standard
@@ -122,7 +126,7 @@
   \webText{http://astro.tsinghua.edu.cn/~smao/}{Dr. Shude Mao},
   Tsinghua Department of Astronomy.
 \end{enumerate}
-
+\filbreak
 \mySub{Jide Technology Co. -- June - July 2015 -- Summer Intern}
 \begin{enumerate}
 \item Performed product testing for RemixOS, an Android derivative
@@ -134,8 +138,7 @@
 \item Collaborated with Jason Zheng and Jeff Zhao (International
   Marketing Manager).
 \end{enumerate}
-
-\newpage
+\filbreak
 \myTitle{Other Projects}
 
 \mySub{WebGL Jelly Cube Project}
@@ -148,7 +151,7 @@ Earned third place in the UCLA computer graphics class contest, Fall
 
 \web{https://github.com/akeley98/JellyMcJelloFace}
 \hfill\web{https://youtu.be/YwvMSeB6NzU}
-
+\filbreak
 \mySub{Myricube -- Experimental OpenGL Voxel Renderer (WIP)}
 
 This experiment in hybrid raycast/mesh voxel renderering was inspired
@@ -175,7 +178,7 @@ time wasted raycasting through empty space, compared to a conventional
 raycasting renderer.
 
 \web{https://github.com/akeley98/myricube}
-
+\filbreak
 \mySub{Proposed gem5 Hardware Simulator Partial Bypassing Patch}
 
 This patch is refactored \texttt{C++11} code that I wrote for my
@@ -201,7 +204,7 @@ mainline \texttt{gem5}.
 \web{https://gem5-review.googlesource.com/c/public/gem5/+/27767}
 
 \web{https://github.com/akeley98/FU-pools/blob/b4d291429edb6aa4988888656b6867ff99591b90/fu-pools.pdf}
-
+\filbreak
 \mySub{DementedIGPU -- Linux Nvidia Setup Script}
 
 (Unfortunately, this project no longer works due to Bumblebee's
@@ -218,8 +221,20 @@ it as beginner-friendly as a command line application can be.
 
 \web{https://github.com/akeley98/DementedIGPU}
 
+\vspace{5cm}
+
+{
+\begin{center}
+End résumé: Undergraduate transcript appears as appendix.
+
+\color{gray}
+Typeset in \LaTeX\ with \textsf{Ubuntu}, \texttt{Ubuntu Mono} fonts by
+Dalton Maag and Canonical Ltd.
+\end{center}
+}
+
 \newpage
-\myTitle{UCLA Education -- September 2017 - August 2020}
+\myTitle{Appendix: UCLA Education -- September 2017 - August 2020}
 
 \myKey{First Major} Computer Science \hfill\myKey{Second Major}
 Mathematics \hfill\myKey{GPA} \GPA\ (\GpaDate)
@@ -328,13 +343,7 @@ Psych 2 & Experimental Psychophysiology & Experiment Design \& Paper \\
 \end{tabular}
 
 \vspace{10mm}
-{
-\begin{center}
-\color{gray}
-Typeset in \LaTeX\ with \textsf{Ubuntu}, \texttt{Ubuntu Mono} fonts by
-Dalton Maag and Canonical Ltd.
-\end{center}
-}
+
 
 \end{document}
 
