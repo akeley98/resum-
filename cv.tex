@@ -184,12 +184,12 @@ subsets of a list of voxels into a mesh to draw.} for nearby voxels
 but draws more distant voxels with an alternative raycasting
 renderer. This renderer subdivides the voxel model into cubic chunks,
 computes a minimal AABB\footnote{Axis aligned bounding box -- requires
-only 12 triangles to draw.} for each chunk's visible voxels, and draws
-the AABBs themselves with a raycasting fragment shader that only
-checks for intersections within the drawn AABB.  Dividing the model
-into AABBs reduces my renderer's memory bandwidth requirements and
-time wasted raycasting through empty space, compared to a conventional
-raycasting renderer.
+only six front-facing triangles to draw.} for each chunk's visible
+voxels, and draws the AABBs themselves with a raycasting fragment
+shader that only checks for intersections within the drawn AABB.
+Dividing the model into AABBs reduces the renderer's memory bandwidth
+requirements and time wasted raycasting through empty space, without
+requiring any acceleration structures be built.
 
 Additionally, the project leverages memory-mapped files and Vulkan
 asynchronous transfers to allow for low-latency, high-throughput model
