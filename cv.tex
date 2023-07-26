@@ -149,11 +149,11 @@ Earned third place in the UCLA computer graphics class contest, Fall
 \web{https://github.com/akeley98/JellyMcJelloFace}
 \hfill\web{https://youtu.be/YwvMSeB6NzU}
 \filbreak
-\mySub{Myricube -- Experimental OpenGL Voxel Renderer (WIP)}
+\mySub{Myricube -- Vulkan Voxel Renderer}
 
-This experiment in hybrid raycast/mesh voxel renderering was inspired
-by my discontent with Minecraft's low render distance, even on high
-settings.
+This proof-of-concept hybrid raycast/mesh voxel renderering was
+inspired by my discontent with Minecraft's low render distance and
+slow chunk updates, even on high settings.
 
 Conventional voxel renderers such as Minecraft's work by converting
 voxel models into a mesh of triangles to draw, possibly with some
@@ -161,18 +161,21 @@ optimizations like hidden face removal or merging coplanar
 triangles. This uses the GPU for its designed purpose, but as render
 distance increases, the GPU is bottlenecked by the large number of
 small triangles generated. Myricube uses conventional mesh
-rendering\footnote{More precisely, instanced rendering using
-  \texttt{glDrawElementsInstancedBaseVertexBaseInstance} to convert
-  subsets of a list of voxels into a mesh to draw.} for nearby voxels
+rendering\footnote{More precisely, instanced rendering to convert
+subsets of a list of voxels into a mesh to draw.} for nearby voxels
 but draws more distant voxels with an alternative raycasting
 renderer. This renderer subdivides the voxel model into cubic chunks,
 computes a minimal AABB\footnote{Axis aligned bounding box -- requires
-  only 12 triangles to draw.} for each chunk's visible voxels, and
-draws the AABBs themselves with a raycasting fragment shader that only
+only 12 triangles to draw.} for each chunk's visible voxels, and draws
+the AABBs themselves with a raycasting fragment shader that only
 checks for intersections within the drawn AABB.  Dividing the model
 into AABBs reduces my renderer's memory bandwidth requirements and
 time wasted raycasting through empty space, compared to a conventional
 raycasting renderer.
+
+Additionally, the project leverages memory-mapped files and Vulkan
+asynchronous transfers to allow for low-latency, high-throughput model
+upload and real-time animation.
 
 \web{https://github.com/akeley98/myricube}
 \filbreak
