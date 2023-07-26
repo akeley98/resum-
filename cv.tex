@@ -47,13 +47,12 @@
 \begin{tabular}{l l|l l}
 \myKey{Majors} & CS, Mathematics
  & \myKey{Select Engineering Courses} & \myKey{Select Math Courses} \\
-\myKey{GPA} & \GPA & Parallel \& Distributed Computing & Linear Algebra \\
-\myKey{Graduated} & August 2020
- & Advanced Computer Architecture & Complex Analysis Honors \\
+\myKey{GPA} & \GPA & Parallel \& Distributed Computing & Complex Analysis Honors \\
+%% & Advanced Computer Architecture & Complex Analysis Honors \\
 \myKey{Primary Email} & \email{dza724}{gmail.com}
- & Machine Learning & Algebra Honors \\
+ & Advanced Computer Architecture & Algebra Honors \\
 \myKey{SMS} & 1-408-763-5241
- & Algorithms \& Complexity & Galois Theory \\
+ & Machine Learning & Galois Theory \\
 \myKey{Work Email} & \email{dakeley}{nvidia.com}
  & Formal Langauges \& Automata & Mathematical Modeling
 \end{tabular}
@@ -64,7 +63,24 @@
 
 \mySub{Nvidia -- October 2020 - Present -- Developer Technology Engineer}
 \begin{enumerate}
-\item TODO: actually do this job.
+\item Applied research with Mark Kilgard on
+  massively-parallel SDF-based\footnote{Signed Distance Field} 2D
+  computational geometry.\\
+  ``How to Accelerate 2D Shape Processing for Manufacturing and Planning''
+  - \webText{https://www.nvidia.com/en-us/on-demand/session/gtcspring23-s51140/}{GTC 2023}
+
+\item Author Vulkan samples for
+  \texttt{VK\_EXT\_graphics\_pipeline\_library},
+  \texttt{VK\_KHR\_timeline\_semaphore},\\
+  \texttt{GL\_KHR\_shader\_subgroup\_shuffle},
+  \texttt{VK\_NV\_inherited\_viewport\_scissor}, and ray tracing extensions.
+
+\item
+  \texttt{\webText{https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_NV_inherited_viewport_scissor.html}{VK\_NV\_inherited\_viewport\_scissor}}
+  design, driver implementation, and Vulkan ecosystem support.
+
+\item Consulting with business partners on integrating NVIDIA
+  technology: DMM, \texttt{GL\_NV\_path\_rendering}.
 \end{enumerate}
 \filbreak
 \mySub{Sholari LLC -- July - September 2019 -- Contractor}
@@ -94,7 +110,7 @@
   Aetherling and revised the Aetherling type system to remove
   impediments to parallelizing the prototype's line
   buffers.\footnote{A line buffer device reads in an image as a stream
-    of pixel values and outputs rectangular portions (``windows'') of
+    of pixel values and outputs rectangular ``windows'' of
     the image.}
 \end{enumerate}
 \quad\web{https://aetherling.org} (``Type-Directed Scheduling of Streaming Accelerators'' - PLDI 2020)
