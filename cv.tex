@@ -14,20 +14,20 @@
 \linespread{1.0}
 \setlength{\parskip}{1mm}
 
-\setsansfont{Ubuntu}
+\setsansfont{FreeSans}
 \setmonofont{Ubuntu Mono}
 
 \hyphenation{WebGL}
 
-\definecolor{webColor}{RGB}{0, 72, 180}
+\definecolor{webColor}{RGB}{0, 72, 225}
 \newcommand{\web}[1]{{ \color{webColor} \small \url{#1}}}
 \newcommand{\webText}[2]{{\color{webColor} \href{#1}{#2}}}
 \newcommand{\email}[2]{{\small \color{webColor} \textsf{\href{mailto:#1@#2}{#1[at]#2}}}}
-\definecolor{titleColor}{RGB}{140, 70, 150}
-\newcommand{\myTitle}[1]{{ \vspace{2mm} \LARGE \color{titleColor} \hspace{-12mm} \( \circ \)\ \textsf{#1} \vspace{2mm}}}
-\definecolor{subColor}{RGB}{140, 40, 110}
+\definecolor{titleColor}{RGB}{0, 0, 0}
+\newcommand{\myTitle}[1]{{ \vspace{2mm} \large \color{titleColor} \hspace{-12mm} \( \circ \)\ \textbf{\textsf{#1}} \vspace{2mm}}}
+\definecolor{subColor}{RGB}{170, 0, 149}
 \newcommand{\mySub}[1]{{\color{subColor}\hspace{-6mm} \( \times \)\ \textsf{#1}}}
-\definecolor{keyColor}{RGB}{100, 80, 30}
+\definecolor{keyColor}{RGB}{170, 149, 0}
 \newcommand{\myKey}[1]{{\color{keyColor}\textbf{#1}}}
 \definecolor{oddColor}{RGB}{245, 240, 250}
 \definecolor{evenColor}{RGB}{240, 240, 240}
@@ -228,8 +228,10 @@ it as beginner-friendly as a command line application can be.
 End résumé: Undergraduate transcript appears as appendix.
 
 \color{gray}
-Typeset in \LaTeX\ with \textsf{Ubuntu}, \texttt{Ubuntu Mono} fonts by
-Dalton Maag and Canonical Ltd.
+Typeset in \LaTeX\
+
+Fonts: Computer Modern, \textsf{FreeSans} (GNU FreeFont),
+\texttt{Ubuntu Mono} (Dalton Maag \& Canonical Ltd.)
 \end{center}
 }
 
