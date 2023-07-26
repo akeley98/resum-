@@ -34,6 +34,8 @@
 
 \newcommand{\GPA}{3.762}
 \newcommand{\GpaDate}{August 2020}
+\definecolor{lightttColor}{RGB}{89, 89, 104}
+\newcommand{\lighttt}[1]{{\color{lightttColor}\texttt{#1}}}
 
 \begin{document}
 \reversemarginpar
@@ -70,17 +72,17 @@
   - \webText{https://www.nvidia.com/en-us/on-demand/session/gtcspring23-s51140/}{GTC 2023}
 
 \item Author Vulkan samples for
-  \texttt{VK\_EXT\_graphics\_pipeline\_library},
-  \texttt{VK\_KHR\_timeline\_semaphore},\\
-  \texttt{GL\_KHR\_shader\_subgroup\_shuffle},
-  \texttt{VK\_NV\_inherited\_viewport\_scissor}, and ray tracing extensions.
+  \lighttt{VK\_EXT\_graphics\_pipeline\_library},
+  \lighttt{VK\_KHR\_timeline\_semaphore},\\
+  \lighttt{GL\_KHR\_shader\_subgroup\_shuffle},
+  \lighttt{VK\_NV\_inherited\_viewport\_scissor}, and ray tracing extensions.
 
 \item
   \texttt{\webText{https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_NV_inherited_viewport_scissor.html}{VK\_NV\_inherited\_viewport\_scissor}}
   design, driver implementation, and Vulkan ecosystem support.
 
 \item Consulting with business partners on integrating NVIDIA
-  technology: DMM, \texttt{GL\_NV\_path\_rendering}.
+  technology: DMM, \lighttt{GL\_NV\_path\_rendering}.
 \end{enumerate}
 \filbreak
 \mySub{Sholari LLC -- July - September 2019 -- Contractor}
@@ -90,9 +92,9 @@
 \item Implemented tools for visualizing tumor responses to treatments:
   line graphs, waterfall (bar) plots, and the user interface for the
   timeline (graph x-axis).
-\item Wrote a multithreaded \texttt{C++11} plugin for visualizing
+\item Wrote a multithreaded \lighttt{C++11} plugin for visualizing
   tumors \& immune system responses as particle clouds, and integrated
-  it with the single-threaded \texttt{C\#} Unity Engine.
+  it with the single-threaded \lighttt{C\#} Unity Engine.
 \end{enumerate}
 \filbreak
 \mySub{Stanford University -- June - September 2018 --
@@ -134,7 +136,7 @@
 \item Designed a small library for fitting and plotting standard
   microlensing event light curves given discrete measurements of a
   star's apparent magnitude (brightness) through time.
-\item Used Python, \texttt{C++}, SciPy, Matplotlib.
+\item Used Python, \lighttt{C++}, SciPy, Matplotlib.
 \item Collaborated with
   \webText{http://astro.tsinghua.edu.cn/~smao/}{Dr. Shude Mao},
   Tsinghua Department of Astronomy.
@@ -197,14 +199,14 @@ upload and real-time animation.
 \filbreak
 \mySub{Proposed gem5 Hardware Simulator Partial Bypassing Patch}
 
-This patch is refactored \texttt{C++11} code that I wrote for my
+This patch is refactored \lighttt{C++11} code that I wrote for my
 Advanced Computer Architecture course project.
 
 In an out-of-order CPU, hardware bypassing allows instructions stalled
 waiting for a register to start execution as soon as the functional
 unit (ALU, memory port, etc.) writing to said register completes,
 without waiting for the actual commitment to register file. This is
-crucial for performance, so mainline \texttt{gem5} simulates complete
+crucial for performance, so mainline \lighttt{gem5} simulates complete
 bypassing between all functional units in the simulated CPU. However,
 this is not practical to realize in modern superscalar hardware, as
 bypassing costs grow quadratically with the number of functional
@@ -215,7 +217,7 @@ between pools.
 
 The patch received positive code reviews; however, it doesn't look
 like there's enough interest in the feature to actually merge it into
-mainline \texttt{gem5}.
+mainline \lighttt{gem5}.
 
 \web{https://gem5-review.googlesource.com/c/public/gem5/+/27767}
 
@@ -294,7 +296,7 @@ A  & Math 134 & Systems of Differential Equations & \\
 \rowcolor{evenColor}
 A+ & CS 133 & Parallel \& Distributed Computing & OpenMP, OpenCL, MPI, GPGPU, FPGA \\
 \rowcolor{evenColor}
-A+ & CS 251A & Advanced Computer Architecture & \texttt{gem5} Hardware Sim Project, Graduate Course \\
+A+ & CS 251A & Advanced Computer Architecture & \lighttt{gem5} Hardware Sim Project, Graduate Course \\
 \rowcolor{evenColor}
 A  & Math 110BH & Algebra Honors & Ring Theory, Module Theory \\
 
