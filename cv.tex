@@ -212,7 +212,7 @@ bypassing between all functional units in the simulated CPU. However,
 this is not practical to realize in modern superscalar hardware, as
 bypassing costs grow quadratically with the number of functional
 units. My patch splits the CPU's functional units into separate pools,
-with bypassing simulated only between pools. The
+with bypassing simulated only within pools. The
 commit-to-register-file delay is imposed for values communicated
 between pools.
 
