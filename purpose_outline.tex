@@ -1,0 +1,170 @@
+\documentclass[11pt]{article}
+\usepackage[letterpaper, portrait, margin=20mm]{geometry}
+
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{placeins}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage[parfill]{parskip}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fontspec}
+\linespread{1.0}
+\setlength{\parskip}{1mm}
+
+\setsansfont{FreeSans}
+\setmonofont{Ubuntu Mono}
+
+\hyphenation{WebGL}
+
+\definecolor{webColor}{RGB}{0, 72, 225}
+\newcommand{\web}[1]{{\color{webColor} \small \url{#1}}}
+\newcommand{\webText}[2]{{\color{webColor} \href{#1}{#2}}}
+\newcommand{\email}[2]{{\small \color{webColor} \textsf{\href{mailto:#1@#2}{#1[at]#2}}}}
+\definecolor{titleColor}{RGB}{0, 0, 0}
+\newcommand{\myTitle}[1]{{ \vspace{2mm} \large \color{titleColor} \hspace{-12mm} \textbf{\textsf{#1}} \vspace{2mm}}}
+\definecolor{subColor}{RGB}{170, 0, 149}
+\newcommand{\mySub}[1]{{\color{subColor}\hspace{-6mm} \( \times \)\ \textsf{#1}}}
+\definecolor{keyColor}{RGB}{170, 149, 0}
+\newcommand{\myKey}[1]{{\color{keyColor}\textbf{#1}}}
+\definecolor{oddColor}{RGB}{242, 236, 248}
+\definecolor{evenColor}{RGB}{248, 248, 248}
+
+\newcommand{\GPA}{3.762}
+\newcommand{\GpaDate}{August 2020}
+\definecolor{lightttColor}{RGB}{69, 69, 80}
+\newcommand{\lighttt}[1]{{\color{lightttColor}\texttt{#1}}}
+
+\begin{document}
+\raggedright
+\reversemarginpar
+\begin{center}
+\textsf{\textbf{Statement of Purpose Outline/Notes}}
+\end{center}
+
+Based on \web{https://grad.berkeley.edu/admissions/steps-to-apply/requirements/statement-purpose/}
+
+\myTitle{Introduction}
+
+\begin{enumerate}
+\item Background: several years experience in parallel computing, and
+  designing and implementing real-world systems.
+\item I'm interested in new applications for parallel and accelerated
+  computing, and researching disciplined ``Halide-like'' abstractions
+  to make this possible.
+\end{enumerate}
+
+\myTitle{Research Experience}
+
+\mySub{NVIDIA Research}
+
+\begin{enumerate}
+\item Research on novel GPU algorithms for 2D computational geometry,
+  based on signed distance fields.
+\item Targetting applications in PCB design software, manufacturing, lithography.
+\item Working with Mark Kilgard, NVIDIA Research, as well as outside
+  customers, but the vast majority of algorithms were invented and
+  implemented by me.
+\item I wish I can give more details on this but this is not really
+  public right now, besides my very high-level talk below:
+\end{enumerate}
+
+``How to Accelerate 2D Shape Processing for Manufacturing and Planning''
+- \webText{https://www.nvidia.com/en-us/on-demand/session/gtcspring23-s51140/}{GTC 2023}
+(s51140)
+\filbreak
+
+\mySub{Stanford FPGA Research}
+
+\begin{enumerate}
+\item Undergraduate co-author of Aetherling with
+  \webText{https://david-durst.github.io/}{David Durst} (lead author),
+  \webText{https://graphics.stanford.edu/~kayvonf/}{Dr. Kayvon Fatahalian},
+  and \webText{https://graphics.stanford.edu/~hanrahan/}{Dr. Pat Hanrahan}.
+\item Research into compiling from a high-level Haskell description of
+  an image-processing pipeline into an FPGA design; by using a type
+  system that encodes timing information, the design is automatically
+  parallelized to utilize the amount of resources available.
+\item Prototyped solutions (in Haskell) to functional simulation, line
+  buffer parallelization, the type system, and static ``retiming'' (to
+  avoid ready-valid interfaces).
+\end{enumerate}
+
+\quad\web{https://aetherling.org} (``Type-Directed Scheduling of Streaming Accelerators'' - PLDI 2020)
+\filbreak
+
+\mySub{MediocrePy -- Astrophysics Number-crunching Project}
+
+\begin{enumerate}
+\item Worked with
+  \webText{http://sancerre.as.arizona.edu/~caiz/Home/Welcome.html}{Dr. Zheng Cai},
+  (UC Santa Cruz Astrophysics) to understand their performance
+  problems and computation needs.
+\item Implemented an extensively-optimized multithreaded AVX solution
+  (sole software author).
+\item Problem: Combine a short stack of N-many 2D images (N is several
+  hundred) into a single image, where the output $(x,y)$ pixel is
+  found by applying a pixelwise ``combine'' function to
+  the corresponding stack of input pixels $\{(x,y,i) \mid i = 0, 1, ... N-1 \}$
+\item Non-trivial combine functions: median, custom ``scaled mean''
+  algorithm, all with iterative sigma-clipping outlier rejection.
+\end{enumerate}
+
+\quad\web{https://github.com/akeley98/MediocrePy}
+\filbreak
+
+\myTitle{Work Activities}
+
+I've been working at NVIDIA for three years as an IC3-level developer
+technology engineer (IC1-level when hired). I work internally with
+NVIDIA research and outside with independent software vendors. Most of
+my work is in CUDA, but I am also experienced with modern
+\lighttt{C++}, OpenGL, and have published educational samples with
+Vulkan as part of my professional work.
+
+\filbreak
+
+\myTitle{Interests}
+
+\begin{enumerate}
+\item Short-term: new applications for parallel programming in
+  research, e.g. scientific computing
+\item Longer-term/aspirational: parallel programming abstractions such
+  as Halide enable incredible productivity in optimizing parallelized
+  software in a highly-\textit{disciplined} (i.e. provably-correct)
+  manner; however, they are generally limited to image-processing or
+  image-processing-like software (e.g. machine learning). Can such a
+  disciplined and optimized abstraction be adapted to (or inspire) a
+  more general-purpose solution? (or at least new DSLs developed for
+  other fields?)
+\item Example: the astrophysics software (MediocrePy) I developed does
+  not fit this model well (in particular, the sigma-clipping outlier
+  rejection logic required highly-nontrivial custom logic in the
+  ``inner loop'' of the parallelization). This software solution
+  exists only because of a chance social encounter between me and
+  Dr. Zheng Cai. Imagine the productivity that would be enabled if
+  abstactions existed that allowed scientists like him, with
+  non-expert programming skills, to develop similarly high-performance
+  software without the involvement of someone like me!
+\item I hope to continue to develop carefully-architected, useful, and
+  maintainable systems as part of my future research work.
+\end{enumerate}
+
+{
+\vfill
+\begin{center}
+\color{gray}
+Typeset in \LaTeX\
+
+Fonts: Computer Modern, \textsf{FreeSans} (GNU FreeFont),
+\texttt{Ubuntu Mono} (Dalton Maag \& Canonical Ltd.)
+\end{center}
+}
+
+\end{document}
+
+% Local Variables:
+% mode: tex
+% End:
