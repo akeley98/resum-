@@ -2,7 +2,7 @@
 \#*
 *\#
 
-cv.log
-cv.aux
-#cv.pdf
+*.log
+*.aux
+*.out
 # Pragmatic to keep cv.pdf in repo even though it's a compilation product.

@@ -20,7 +20,7 @@
 \hyphenation{WebGL}
 
 \definecolor{webColor}{RGB}{0, 72, 225}
-\newcommand{\web}[1]{{ \color{webColor} \small \url{#1}}}
+\newcommand{\web}[1]{{\color{webColor} \small \url{#1}}}
 \newcommand{\webText}[2]{{\color{webColor} \href{#1}{#2}}}
 \newcommand{\email}[2]{{\small \color{webColor} \textsf{\href{mailto:#1@#2}{#1[at]#2}}}}
 \definecolor{titleColor}{RGB}{0, 0, 0}
@@ -31,11 +31,14 @@
 \newcommand{\myKey}[1]{{\color{keyColor}\textbf{#1}}}
 \definecolor{oddColor}{RGB}{242, 236, 248}
 \definecolor{evenColor}{RGB}{248, 248, 248}
+\definecolor{oddTextColor}{RGB}{92, 0, 92}
 
 \newcommand{\GPA}{3.762}
 \newcommand{\GpaDate}{August 2020}
 \definecolor{lightttColor}{RGB}{69, 69, 80}
 \newcommand{\lighttt}[1]{{\color{lightttColor}\texttt{#1}}}
+\newcommand{\oddQuarter}[1]{{\color{oddTextColor}\hspace{-20mm} \textsf{#1}}}
+\newcommand{\evenQuarter}[1]{{\hspace{-20mm} \textsf{#1}}}
 
 \begin{document}
 \reversemarginpar
@@ -240,76 +243,76 @@ Mathematics \hfill\myKey{GPA} \GPA\ (\GpaDate)
  & & Title & Content Notes \\
 \hline
 \rowcolor{oddColor}
-A+ & CS 174A & Intro to Computer Graphics & See WebGL Jelly Cube Project \\
+\texttt{A+} \oddQuarter{Fa17} & CS 174A & Intro to Computer Graphics & See WebGL Jelly Cube Project\\
 \rowcolor{oddColor}
-A+ & EE M16 & Digital Systems & Verilog Lab \\
+\texttt{A+} & EE M16 & Digital Systems & Verilog Lab \\
 \rowcolor{oddColor}
-A+ & Math 115A & Linear Algebra & \\
+\texttt{A+} & Math 115A & Linear Algebra & \\
 \rowcolor{oddColor}
-A  & Math 170A & Probability Theory & \\
+\texttt{A } & Math 170A & Probability Theory & \\
 
 \rowcolor{evenColor}
-A  & CS 35L & Software Construction Lab & POSIX basics (e.g. pthreads, bash) \\
+\texttt{A } \evenQuarter{Wi18} & CS 35L & Software Construction Lab & POSIX basics (e.g. pthreads, bash) \\
 \rowcolor{evenColor}
-A  & CS M146 & Machine Learning & \\
+\texttt{A } & CS M146 & Machine Learning & \\
 \rowcolor{evenColor}
-A  & Math 110A & Algebra & Ring Theory \\
+\texttt{A } & Math 110A & Algebra & Ring Theory \\
 \rowcolor{evenColor}
-A  & Math 131AH & Analysis Honors & Metric Spaces \\
+\texttt{A } & Math 131AH & Analysis Honors & Metric Spaces \\
 
 \rowcolor{oddColor}
-A+ & CS 180 & Algorithms \& Complexity & \\
+\texttt{A+} \oddQuarter{Sp18} & CS 180 & Algorithms \& Complexity & \\
 \rowcolor{oddColor}
-A  & Engr 185EW & Art of Engineering Endeavors & Writing Intensive Team Project \\
+\texttt{A } & Engr 185EW & Art of Engineering Endeavors & Writing Intensive Team Project \\
 \rowcolor{oddColor}
-A  & Math 131BH & Analysis Honors & Derivation, Riemann Integration \\
+\texttt{A } & Math 131BH & Analysis Honors & Derivation, Riemann Integration \\
 
 \rowcolor{evenColor}
-B- & CS 131 & Programming Languages & \\
+\texttt{B-} \evenQuarter{Fa18} & CS 131 & Programming Languages & \\
 \rowcolor{evenColor}
-B+ & CS M152A & Digital Design Lab & Verilog Team Project \\
+\texttt{B+} & CS M152A & Digital Design Lab & Verilog Team Project \\
 \rowcolor{evenColor}
-B+ & Math 110AH & Algebra Honors & Group Theory \\
+\texttt{B+} & Math 110AH & Algebra Honors & Group Theory \\
 \rowcolor{evenColor}
-C  & Math 120A & Differential Geometry & \\
+\texttt{C } & Math 120A & Differential Geometry & \\
 
 \rowcolor{oddColor}
-A- & CS 111 & Operating Systems Principles & Focus on POSIX \\
+\texttt{A-} \oddQuarter{Wi19} & CS 111 & Operating Systems Principles & Focus on POSIX \\
 \rowcolor{oddColor}
-A+ & CS 181 & Formal Languages \& Automata & Regex, CFG, Turing Machines, Decidability \\
+\texttt{A+} & CS 181 & Formal Languages \& Automata & Regex, CFG, Turing Machines, Decidability \\
 \rowcolor{oddColor}
-A- & Math 132H & Complex Analysis Honors & \\
+\texttt{A-} & Math 132H & Complex Analysis Honors & \\
 
 \rowcolor{evenColor}
-A- & CS 161 & Fundamentals of Artificial Intelligence & \\
+\texttt{A-} \evenQuarter{Sp19} & CS 161 & Fundamentals of Artificial Intelligence & \\
 \rowcolor{evenColor}
-A+ & EE M116C & Computer Systems Architecture & \\
+\texttt{A+} & EE M116C & Computer Systems Architecture & \\
 \rowcolor{evenColor}
-B+ & Math 111 & Theory of Numbers & Overview of p-adic Numbers \\
+\texttt{B+} & Math 111 & Theory of Numbers & Overview of p-adic Numbers \\
 
 \rowcolor{oddColor}
-A- & CS 118 & Computer Network Fundamentals & \\
+\texttt{A-} \oddQuarter{Fa19} & CS 118 & Computer Network Fundamentals & \\
 \rowcolor{oddColor}
-B  & CS 130 & Software Engineering & Java Team Project \\
+\texttt{B } & CS 130 & Software Engineering & Java Team Project \\
 \rowcolor{oddColor}
-A  & Math 134 & Systems of Differential Equations & \\
+\texttt{A } & Math 134 & Systems of Differential Equations & \\
 
 \rowcolor{evenColor}
-A+ & CS 133 & Parallel \& Distributed Computing & OpenMP, OpenCL, MPI, GPGPU, FPGA \\
+\texttt{A+} \evenQuarter{Wi20} & CS 133 & Parallel \& Distributed Computing & OpenMP, OpenCL, MPI, GPGPU, FPGA \\
 \rowcolor{evenColor}
-A+ & CS 251A & Advanced Computer Architecture & \lighttt{gem5} Hardware Sim Project, Graduate Course \\
+\texttt{A+} & CS 251A & Advanced Computer Architecture & \lighttt{gem5} Hardware Sim Project, Graduate Course \\
 \rowcolor{evenColor}
-A  & Math 110BH & Algebra Honors & Ring Theory, Module Theory \\
+\texttt{A } & Math 110BH & Algebra Honors & Ring Theory, Module Theory \\
 
 \rowcolor{oddColor}
-A  & Math 110C & Algebra\( ^* \) & Field Theory, Galois Theory \\
+\texttt{A } \oddQuarter{Sp20} & Math 110C & Algebra\( ^* \) & Field Theory, Galois Theory \\
 \rowcolor{oddColor}
-A  & Math 115B & Linear Algebra & \\
+\texttt{A } & Math 115B & Linear Algebra & \\
 
 \rowcolor{evenColor}
-A & Math 142 & Mathematical Modeling & \\
+\texttt{A } \evenQuarter{Su20} & Math 142 & Mathematical Modeling & \\
 \rowcolor{evenColor}
-A+ & Math 167 & Game Theory & \\
+\texttt{A+} & Math 167 & Game Theory & \\
 \hline
 \end{tabular}
 }
