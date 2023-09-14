@@ -26,7 +26,7 @@
 \definecolor{titleColor}{RGB}{0, 0, 0}
 \newcommand{\myTitle}[1]{{ \vspace{2mm} \large \color{titleColor} \hspace{-12mm} \textbf{\textsf{#1}} \vspace{2mm}}}
 \definecolor{subColor}{RGB}{170, 0, 149}
-\newcommand{\mySub}[1]{{\color{subColor}\hspace{-6mm} \( \times \)\ \textsf{#1}}}
+\newcommand{\mySub}[1]{{\color{subColor}\hspace{-6mm} \textsf{#1}}}
 \definecolor{keyColor}{RGB}{170, 149, 0}
 \newcommand{\myKey}[1]{{\color{keyColor}\textbf{#1}}}
 \definecolor{oddColor}{RGB}{242, 236, 248}
@@ -52,8 +52,8 @@ Based on \web{https://grad.berkeley.edu/admissions/steps-to-apply/requirements/s
 \item Background: several years experience in parallel computing, and
   designing and implementing real-world systems.
 \item I'm interested in new applications for parallel and accelerated
-  computing, and researching disciplined ``Halide-like'' abstractions
-  to make this possible.
+  computing, and potentially researching disciplined ``Halide-like''
+  abstractions to make this possible.
 \end{enumerate}
 
 \myTitle{Research Experience}
@@ -135,13 +135,14 @@ Vulkan as part of my professional work.
   as Halide enable incredible productivity in optimizing parallelized
   software in a highly-\textit{disciplined} (i.e. provably-correct)
   manner; however, they are generally limited to image-processing or
-  image-processing-like software (e.g. machine learning). Can such a
-  disciplined and optimized abstraction be adapted to (or inspire) a
-  more general-purpose solution? (or at least new DSLs developed for
-  other fields?)
+  image-processing-like software (e.g. machine
+  learning). \textit{(Fact check?)} Can such a disciplined and
+  optimized abstraction be adapted to (or inspire) a more
+  general-purpose solution? (or at least new DSLs developed for other
+  fields?)
 \item Example: I didn't see a way to fit this model to the
   astrophysics software (MediocrePy) I developed (in particular, the
-  sigma-clipping outlier rejection logic required highly-nontrivial
+  sigma-clipping outlier-rejection logic required highly-nontrivial
   custom logic in the ``inner loop'' of the parallelization). This
   software solution exists only because of a chance social encounter
   between me and Dr. Zheng Cai. Imagine the productivity that would be
