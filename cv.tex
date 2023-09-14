@@ -68,24 +68,25 @@
 
 \mySub{Nvidia Corporation -- October 2020 - Present -- Developer Technology Engineer}
 \begin{enumerate}
-\item Applied research with Mark Kilgard on
-  massively-parallel SDF-based\footnote{Signed Distance Field} 2D
-  computational geometry.\\
-  ``How to Accelerate 2D Shape Processing for Manufacturing and Planning''
-  - \webText{https://www.nvidia.com/en-us/on-demand/session/gtcspring23-s51140/}{GTC 2023}
-  (s51140)
+\item Collaborated with Nvidia Research on GPU algorthms for
+  SDF-based\footnote{Signed Distance Field} 2D computational
+  geometry.\\ ``How to Accelerate 2D Shape Processing for
+  Manufacturing and Planning'' -
+  \webText{https://www.nvidia.com/en-us/on-demand/session/gtcspring23-s51140/}{GTC
+    2023} (s51140)
 
-\item Author Vulkan samples for
+\item Wrote Vulkan samples for
   \lighttt{VK\_EXT\_graphics\_pipeline\_library},
   \lighttt{VK\_KHR\_timeline\_semaphore},\\
   \lighttt{GL\_KHR\_shader\_subgroup\_shuffle},
   \lighttt{VK\_NV\_inherited\_viewport\_scissor}, and ray tracing extensions.
 
 \item
+  Designed
   \texttt{\webText{https://registry.khronos.org/vulkan/specs/1.3-extensions/man/html/VK_NV_inherited_viewport_scissor.html}{VK\_NV\_inherited\_viewport\_scissor}}
-  design, driver implementation, and Vulkan ecosystem support.
+  and implemented its driver and toolchain support.
 
-\item Consulting with business partners on integrating Nvidia
+\item Consulted with business partners on integrating Nvidia
   technology: DMM, \lighttt{GL\_NV\_path\_rendering}.
 \end{enumerate}
 \filbreak
@@ -102,33 +103,33 @@
 \end{enumerate}
 \filbreak
 \mySub{Stanford University -- June - September 2018 --
-  Research Assistant}
+  Undergraduate Research Assistant}
 \begin{enumerate}
-\item Undergraduate co-author of Aetherling with
+\item Helped prototype Aetherling, a Haskell-embedded domain-specific
+  language for designing hardware image processing pipelines with
+  automatic parallelization and static scheduling\footnote{i.e. not
+  using ready-valid hardware interfaces.};
+  co-authored paper with
   \webText{https://david-durst.github.io/}{David Durst} (lead author),
   \webText{https://graphics.stanford.edu/~kayvonf/}{Dr. Kayvon Fatahalian},
   and \webText{https://graphics.stanford.edu/~hanrahan/}{Dr. Pat Hanrahan}.
-\item Aetherling supports automatic parallelization and static
-  scheduling\footnote{i.e. not using ready-valid hardware interfaces.}
-  of hardware image processing pipelines designed using a
-  Haskell-embedded domain-specific language.
-\item Contributed to the functional simulator of an early prototype of
-  Aetherling and revised the Aetherling type system to remove
-  impediments to parallelizing the prototype's line
-  buffers.\footnote{A line buffer device reads in an image as a stream
-    of pixel values and outputs rectangular ``windows'' of
-    the image.}
+\item Implemented a functional simulator of an early prototype of
+  Aetherling.
+\item Revised the type system to remove impediments to parallelizing
+  line buffers.\footnote{A line buffer device reads in an image as a
+  stream of pixel values and outputs rectangular ``windows'' of the
+  image.}
 \end{enumerate}
 \quad\web{https://aetherling.org} (``Type-Directed Scheduling of Streaming Accelerators'' - PLDI 2020)
 \filbreak
 \mySub{MediocrePy -- March - June 2017 -- Independent Project}
 \begin{enumerate}
-\item Created an optimized library for reducing stacks of telescope
-  images to a single image using pixel means or medians and optional
-  outlier rejection (sigma clipping) for noise reduction.
-\item Multithreaded C core with AVX vectorization; C and Python
-  (numpy) interface. Decreased runtime (compared to the Python
-  implementation replaced) from hours to milliseconds.
+\item Created an optimized library for reducing stacks of
+  telescope images to a single image using pixel means or medians and
+  optional outlier rejection (sigma clipping) for noise reduction.
+\item Designed and implemented a multithreaded C core with AVX
+  vectorization, with an optional NumPy wrapper.  Decreased runtime
+  (compared to the Python code replaced) from hours to milliseconds.
 \item Collaborated with
   \webText{http://sancerre.as.arizona.edu/~caiz/Home/Welcome.html}{Dr. Zheng
     Cai}, UC Santa Cruz Astrophysics.
@@ -140,7 +141,7 @@
 \item Designed a small library for fitting and plotting standard
   microlensing event light curves given discrete measurements of a
   star's apparent magnitude (brightness) through time.
-\item Used Python, \lighttt{C++}, SciPy, Matplotlib.
+\item Used Python, \lighttt{C++}, SciPy, and Matplotlib.
 \item Collaborated with
   \webText{http://astro.tsinghua.edu.cn/~smao/}{Dr. Shude Mao},
   Tsinghua Department of Astronomy.
