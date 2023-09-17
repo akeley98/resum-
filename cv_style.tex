@@ -31,6 +31,7 @@
 \fi
 \definecolor{subColor}{RGB}{170, 0, 149}
 \newcommand{\mySub}[1]{{\color{subColor}\hspace{-6mm} \textsf{#1}}}
+\newcommand{\mySubNoColor}[1]{{\hspace{-6mm} \textsf{#1}}}
 \definecolor{keyColor}{RGB}{170, 149, 0}
 \newcommand{\myKey}[1]{{\color{keyColor}\textbf{#1}}}
 \definecolor{oddColor}{RGB}{242, 236, 248}
@@ -45,11 +46,11 @@
 \newcommand{\evenQuarter}[1]{{\hspace{-20mm} \textsf{#1}}}
 
 \ifdefined\RESUME
-\newcommand{\resumeMiniItemURL}[2]{\hfill -- \hfill\web{#1}\\#2}
-\newcommand{\resumeMiniItem}[1]{\\#1}
+\newcommand{\resumeMiniItemURL}[3]{\mySubNoColor{#1}\hfill -- \hfill\web{#2}\\#3}
+\newcommand{\resumeMiniItem}[2]{\mySubNoColor{#1}\\#2}
 \else
-\newcommand{\resumeMiniItemURL}[2]{}
-\newcommand{\resumeMiniItem}[1]{}
+\newcommand{\resumeMiniItemURL}[3]{\mySub{#1}}
+\newcommand{\resumeMiniItem}[2]{\mySub{#1}}
 \fi
 
 \ifdefined\CV
