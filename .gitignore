@@ -7,4 +7,5 @@
 *.out
 *.pdf
 !cv.pdf
+!resume.pdf
 # Pragmatic to keep cv.pdf in repo even though it's a compilation product.
