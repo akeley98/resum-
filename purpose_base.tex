@@ -13,13 +13,13 @@ NVIDIA Research and directly with customers to design new GPU
 algorithms and libraries.
 
 My interests lie in designing disciplined abstractions that allow for
-non-hardware-experts to efficiently leverage parallel processors, or
-for experts to do so more safely and efficiently. Just as it is easy
-today for a research scientist to program a single x86 core (with the
-help of a wealth of Python packages), so too may the same be said in
-the distant future for programming heterogenous parallel
-processors. In other words, I'm looking to research abstractions that
-could one day help make specialists like me redundant. 
+non-experts to efficiently leverage parallel processors, or for
+experts to do so more safely and efficiently. Just as it is easy today
+for a research scientist to program a single x86 core (with the help
+of a wealth of Python packages), so too may the same be said one day
+for programming heterogenous parallel processors. In other words, I'm
+looking to research abstractions that could eventually make
+specialists like me redundant.
 
 In the meantime, I look forward to being able to dedicate more time as
 a PhD student to understanding the theory of parallel algorithms,
@@ -30,55 +30,50 @@ substantial codebases, to contribute to parallel-programming
 frameworks, DSLs, or auto-scheduling research. My past
 hand-optimization experience has been on algorithms that
 are \textit{not} really implementable as (sparse) matrix/tensor
-operations, and I'm particularly (but not exclusively) curious about
+operations, so I'm particularly (but not exclusively) curious about
 whether the work on parallel DSLs can be adapted to such problems.
 
 \myKey{MediocrePy:}
 As a side project in community college, I worked
 with \webText{https://astro.tsinghua.edu.cn/info/1039/1315.htm}{Dr. Zheng
 Cai} (UC Santa Cruz Astrophysics) to understand the performance
-problems of their number-crunching codebase. We identified ``image
-combine'' and ``sigma clipping'' as ripe candidates for
-acceleration. In this algorithm, a short stack of 2D images is
-combined into a single image, where the output pixel $(x,y)$ is a
-function of the stack of $(x,y)$ pixels taken from each input image.
+problems of their number-crunching codebase. We targetted ``image
+combine'' and ``sigma-clipping'' for acceleration.
 
-The combine function iteratively takes the mean/median and standard
-deviation of unmasked pixel values, masks out outliers, and repeats an
+In this algorithm, a short stack of 2D images is combined into a
+single image, where the output pixel $(x,y)$ is a function of the
+stack of $(x,y)$ pixels taken from each input image.  The combine
+function iteratively takes the mean/median and standard deviation of
+unmasked pixel values, masks out outliers, and repeats an
 unpredictable number of times (independent per pixel stack) until
 convergence. Although nominally an image processing problem, with each
 pixel stack being its own independent lane, this problem was
 complicated by an unusual amount of data-dependent control flow and
 memory addressing.
 
-I was the sole author of a multithreaded AVX
+I am the sole author of a multithreaded AVX
 library, \webText{https://github.com/akeley98/MediocrePy}{MediocrePy},
-that implements this algorithm over $100\times$ faster than the Python
-code replaced. For ease-of-use, I included a Python wrapper around the
-C library.
+that implements this algorithm over $100\times$ faster than the pure
+Python code replaced.
 
 \myKey{Aetherling:}
-I worked at Stanford in summer 2018 contributing to the Aetherling
-DSL, which was presented as ``Type-Directed Scheduling of Streaming
-Accelerators'' in PLDI 2020. This Haskell-embedded DSL compiles an
-input DAG for an image processing pipeline into an FPGA design. By
-using a type system that encodes the input/output interface and static
-timing information for each DAG vertex, the design is automatically
-parallelized (with informed space-time tradeoffs) to the degree
-supported by the resources available.
+In summer 2018, as a research assistant at Stanford, I contributed to
+the Aetherling DSL (``Type-Directed Scheduling of Streaming
+Accelerators'', PLDI 2020). This Haskell-embedded DSL compiles an
+input DAG for an image processing pipeline into an FPGA design, which
+is auto-parallelized (to fit the chip) using a type system that
+encodes interface and scheduling information for each DAG vertex.
 
-I was only able to contribute very early in the project, so though I
-made a couple of practical contributions (a functional simulator and
-some test cases for generated hardware designs), most of my work was in
-prototyping the design and type system of the language.
-
-Most notably, I identified flaws in the prototype type system's
-encoding of the line buffer's 2D interface that would later make it
-impossible in many cases to actually express a valid design with a
-parallelization factor other than one. I proposed a new way of
-representing line buffer state that fixed these limitations, and
-assisted David Durst in seeing this new line buffer realized in a
-hardware design language.
+In this early phase of the project, I made a couple of practical
+contributions (a functional simulator and some test cases for
+generated hardware designs), but most of my work was in prototyping
+language design and the type system.  Most notably, I identified that
+the type system rules interacted poorly with the line buffer's 2D
+interface, and would have made it impossible (except special cases) to
+express a valid line buffer with a parallelization factor other than
+one. I proposed a new way of representing line buffer state that fixed
+this limitation, and assisted David Durst in seeing this new line
+buffer realized in a hardware design language.
 
 I also prototyped type systems for encoding scheduling information
 (latency, lane count, underutilization) and algorithms for automatic
@@ -87,16 +82,15 @@ delay-matching.
 \filbreak
 
 \myKey{NVIDIA:}
-My recent activities at NVIDIA have all been on developing novel GPU
-algorithms for 2D computational geometry, both as internal research in
-its own right, and in support of the (separate) cuLitho computational
-lithography project. The research software was presented at GTC 2023
-as
-\webText{https://www.nvidia.com/en-us/on-demand/session/gtcspring23-s51140/}{Session
+My recent work has been on developing novel GPU algorithms for 2D
+computational geometry, both as internal research in its own right,
+and in support of the (separate) cuLitho computational lithography
+project. The research software was presented at GTC 2023 as
+\webText{https://www.nvidia.com/en-us/on-demand/session/gtcspring23-s51140/}{session
 s55140}, ``How to Accelerate 2D Shape Processing for Manufacturing and
-Planning''. I primarily work with Mark Kilgard (NVIDIA Research) on
-this topic, although the majority of the algorithms, and all of the
-research code, were developed by me.
+Planning''. I primarily work with Mark Kilgard on this topic, although
+the majority of the algorithms, and all of the research code, were
+developed by me.
 
 As a concrete example of a motivating problem, consider cubic Bezier
 fitting. A typical algorithm for this generates a candidate cubic
@@ -108,15 +102,13 @@ non-trivial, and the size of the reduction is data-dependent).
 
 To port this to the GPU, I had to
 \begin{enumerate}
-  \item Assign one thread to each input point, and rewrite all loops
-  as GPU reductions.
+  \item Assign one thread to each input point, and rewrite all loops.
 
-  \item Transform the recursion to tail recursion (note each
-  point/thread is now involved in just one of the recursive calls).
+  \item Transform the recursion to tail recursion (each point/thread
+  is now involved in just one branch of the subdivide recursion).
 
-  \item Set up efficient systems for performing these
-  unpredictable-length reductions (which pay no heed to warp or block
-  boundaries).
+  \item Efficiently parallelize these unpredictable-length reductions (which pay
+  no heed to warp or block boundaries).
 \end{enumerate}
 
 Although I've taken pains to keep the codebase clear and documented,
