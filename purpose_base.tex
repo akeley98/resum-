@@ -15,10 +15,10 @@ algorithms and libraries.
 My interests lie in designing disciplined abstractions that allow for
 non-experts to efficiently leverage parallel processors, or for
 experts to do so more safely and efficiently. Just as it is easy today
-for a research scientist to program a single x86 core (with the help
-of a wealth of Python packages), so too may the same be said one day
-for programming heterogenous parallel processors. In other words, I'm
-looking to research abstractions that could eventually make
+for a research scientist to program a single x86 core (maybe with the
+help of a wealth of Python packages), so too may the same be said one
+day for programming heterogenous parallel processors. In other words,
+I'm looking to research abstractions that could eventually make
 specialists like me redundant.
 
 In the meantime, I look forward to being able to dedicate more time as
@@ -29,16 +29,17 @@ knowledge, along with my existing industry experience working on
 substantial codebases, to contribute to parallel-programming
 frameworks, DSLs, or auto-scheduling research. My past
 hand-optimization experience has been on algorithms that
-are \textit{not} really implementable as (sparse) matrix/tensor
-operations, so I'm particularly (but not exclusively) curious about
-whether the work on parallel DSLs can be adapted to such problems.
+are \textit{not} really naturally represented as image, matrix, or
+sparse tensor computation, so I'm particularly (but not exclusively)
+curious about whether the work on parallel DSLs can be adapted to such
+problems.
 
 \myKey{MediocrePy:}
 As a side project in community college, I worked
 with \webText{https://astro.tsinghua.edu.cn/info/1039/1315.htm}{Dr. Zheng
 Cai} (UC Santa Cruz Astrophysics) to understand the performance
-problems of their number-crunching codebase. We targetted ``image
-combine'' and ``sigma-clipping'' for acceleration.
+problems of their number-crunching codebase. We targetted the ``image
+combine'' and ``sigma-clipping'' steps for acceleration.
 
 In this algorithm, a short stack of 2D images is combined into a
 single image, where the output pixel $(x,y)$ is a function of the
@@ -92,7 +93,7 @@ Planning''. I primarily work with Mark Kilgard on this topic, although
 the majority of the algorithms, and all of the research code, were
 developed by me.
 
-As a concrete example of a motivating problem, consider cubic Bezier
+As a concrete example of a motivating problem, consider cubic Bézier
 fitting. A typical algorithm for this generates a candidate cubic
 segment using a reduction over the input point sequence, and accepts
 only if the max deviation is low enough. If not, a heuristic chooses
@@ -118,7 +119,17 @@ synchronization, and comments explaining these complicated
 transformations.  Wouldn't it be nice if there were clearer
 abstractions for expressing these manually-applied ``rewrite rules''?
 
-
+\myKey{Future:}
+But of course, setting up a PL ambitious enough to abstract away messy
+problems like the above is probably somewhere between a ``postdoc''
+and ``never'' project, and that's fine. My immediate interests are to
+contribute to, and gain experience from, more realistic ways to push
+the state of the art for parallel algorithms. I envision future work
+in the spirit of projects like Madrona, the Mosaic compiler, or the
+Agile Hardware Project. In the long term (maybe late PhD; maybe
+postdoc), with the benefit of experience gained, I hope to be able to
+form a more informed opinion on what ways such work can be extended to
+form a viable framework for parallelizing general-purpose algorithms.
 
 \end{document}
 
