@@ -1,0 +1,9 @@
+I've encountered a lot of personal challenges in my adult life, but none of them really compare to the (unfortunately not-at-all unique) pain of being an overstressed, depressed high school student. In my case, this led to me dropping out at 16 (the earliest I legally could), which was a shockingly effective tactic for clearing up my mental health issues but otherwise a very risky move. I credit three things with this not ending in total disaster:
+
+First is California's incredible community college system, which allows anyone to study, and allowed me to transfer to a world-class research university despite not having finished high school. I honestly don't know what would have happened to me if this didn't exist.
+
+Second is my own self-learning ability. This is, for example, how I got that MediocrePy project done (excellent as it may be, community college doesn't teach how to vectorize or parallelize code).
+
+Third is the privilege of having supportive parents in the tech industry. They, and sometimes their friends, provided occasional teaching and mentoring that helped me along greatly in my ostensibly self-taught journey.
+
+Besides my in-person mentors, the teaching materials available on the internet have been an incredible resource in helping me get to where I am today, and so I do enjoy giving back to others in turn. Inasmuch as I don't know anyone in real life (outside family and work) who shares my interest in computer graphics and parallelism, I currently participate from time-to-time (as u/akeley98) in discussions and question-answering on the r/OpenGL and r/Vulkan subreddits.
