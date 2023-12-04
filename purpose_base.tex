@@ -120,6 +120,9 @@ transformations.  Wouldn't it be nice if there were clearer
 abstractions for expressing these manually-applied ``rewrite rules''?
 
 % Mad-lib Statement of Purpose generation
+% Not great but I make the strategic call to use almost all of my 1000
+% words to describe my distinctive background ... if you're reading this
+% hopefully you're not me in 6 months regretting this choice.
 
 \myKey{Future:}
 But of course, setting up a PL ambitious enough to abstract away messy
@@ -131,9 +134,18 @@ the state of the art for parallel algorithms.
 I envision future work in the spirit of projects like Madrona, the
 Mosaic compiler, or the Agile Hardware Project.
 \fi
+\ifdefined\UW
+UW in particular has active research in DSLs targetting
+custom/low-power hardware (e.g. Exo and Chlorophyll), which suits my
+interests well.
+\fi
 In the long term (maybe late PhD; maybe postdoc), with the benefit of
 experience gained, I hope to be able to form a more informed opinion
-on what ways such work can be extended to form a viable framework for
+on what ways
+\ifdefined\UW
+(and to what extent)
+\fi
+such work can be extended to form a viable framework for
 parallelizing general-purpose algorithms.
 
 \end{document}
