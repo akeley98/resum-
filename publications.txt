@@ -1,0 +1,3 @@
+David Akeley and Mark Kilard. 2023. How to Accelerate 2D Shape Processing for Manufacturing and Planning. GTC Spring 2023
+
+David Durst, Matthew Feldman, Dillon Huff, David Akeley, Ross Daly, Gilbert Louis Bernstein, Marco Patrignani, Kayvon Fatahalian, and Pat Hanrahan. 2020. Type-Directed Scheduling of Streaming Accelerators. In ACM SIGPLAN Conference on Programming Language Design and Implementation (PLDI)
