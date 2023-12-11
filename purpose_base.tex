@@ -86,37 +86,39 @@ delay-matching.
 My recent work has been on developing novel GPU algorithms for 2D
 computational geometry, both as internal research in its own right,
 and in support of the (separate) cuLitho computational lithography
-project. The research software was presented at GTC 2023 as
-\webText{https://www.nvidia.com/en-us/on-demand/session/gtcspring23-s51140/}{session
+project. I co-presented the research at GTC 2023
+in \webText{https://www.nvidia.com/en-us/on-demand/session/gtcspring23-s51140/}{session
 s55140}, ``How to Accelerate 2D Shape Processing for Manufacturing and
 Planning''. I primarily work with Mark Kilgard on this topic, although
 the majority of the algorithms, and all of the research code, were
 developed by me.
 
-As a concrete example of a motivating problem, consider cubic Bézier
-fitting. A typical algorithm for this generates a candidate cubic
-segment using a reduction over the input point sequence, and accepts
-only if the max deviation is low enough. If not, a heuristic chooses
-where to split the input into two sub-sequences, and we recursively
-fit to \textit{both} subdivided sequences (thus the recursion is
-non-trivial, and the size of the reduction is data-dependent).
+. A typical algorithm for this generates a candidate
+cubic segment using a reduction over the input point sequence, and
+accepts only if the max deviation is low enough. If not, a heuristic
+chooses where to split the input into two sub-sequences, and we
+recursively fit to \textit{both} subdivided sequences (thus the
+recursion is non-trivial, and the size of the reduction is
+data-dependent).
 
-To port this to the GPU, I had to
+I tranformed this to a GPU algorithm by
 \begin{enumerate}
-  \item Assign one thread to each input point, and rewrite all loops.
+  \item Assigning one thread to each input point, and rewriting all
+  loops.
 
-  \item Transform the recursion to tail recursion (each point/thread
-  is now involved in just one branch of the subdivide recursion).
+  \item Transforming the recursion to tail recursion (each
+  point/thread is now involved in just one branch of the subdivide
+  recursion).
 
-  \item Efficiently parallelize these unpredictable-length reductions (which pay
-  no heed to warp or block boundaries).
+  \item Efficiently parallelizing these unpredictable-length
+  reductions (which pay no heed to warp or block boundaries).
 \end{enumerate}
 
 Although I've taken pains to keep the codebase clear and documented,
 the fact remains the actual algorithm can only be seen through a
 distorting lens, dimly, past all the atomics, interleaved
 synchronization, and comments explaining these complicated
-transformations.  Wouldn't it be nice if there were clearer
+transformations. Wouldn't it be nice if there were clearer
 abstractions for expressing these manually-applied ``rewrite rules''?
 
 % Mad-lib Statement of Purpose generation
