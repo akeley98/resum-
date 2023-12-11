@@ -2,7 +2,7 @@ From my work at Nvidia, I have several years of experience independently designi
 
 I first contributed to this field while working at Stanford on the Aetherling FPGA DSL (PLDI 2020). Most notably, I identified limitations in the proposed type system (which encodes data type and interface timing) that would prevent 2D line buffers from being parallelized effectively. I proposed a new way of representing line buffer state that fixed this limitation, and assisted the co-authors in seeing this abstract line buffer lowered into a hardware design language.
 
-Like most such DSLs, this abstraction is specialized for representing tensor/image-processing. This raises one of my long-term research questions: to what extent can such novel languages (e.g. Halide, spatial, low-energy) be generalized to accelerate a much broader class of algorithms: those with more free-form, data-dependent memory access? Much of my day-to-day experience in implementing parallel algorithms (an experience I envision one day looking radically different) has been on such problems.
+Like most such DSLs, this abstraction is specialized for representing tensor/image processing. This raises one of my long-term research questions: to what extent can such novel languages (e.g. Halide, spatial, low-energy) be generalized to accelerate a much broader class of algorithms: those with more free-form, data-dependent memory access? Much of my day-to-day experience in implementing parallel algorithms (an experience I envision one day looking radically different) has been on such problems.
 
 My current 2D computational geometry research at Nvidia (co-presented with Mark Kilgard at GTC 2023, s51140) yielded many such difficult-to-parallelize algorithms. One of them, fitting cubic Bezier segments to input point strips, is most naturally represented as a recursive sequential algorithm: we reduce the input points into a cubic segment, then, if the fit is poor, a heuristic chooses where to subdivide the input in two, and we recursively fit to both subdivided sequences (thus the recursion is non-trivial, and the size of the reduction is data-dependent).
 
@@ -10,7 +10,7 @@ I transformed this to a GPU algorithm by
 
 1. Assigning one thread to each input point, and rewriting all loops.
 
-2. Transforming the recursion to tail recursion (each point/thread is now involved in just one branch of the subdivide recursion).
+2. Transforming the recursion to tail recursion (as each point/thread is now involved in just one branch of the subdivide recursion).
 
 3. Efficiently parallelizing these unpredictable-length reductions (which pay no heed to warp or block boundaries).
 

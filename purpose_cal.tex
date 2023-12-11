@@ -1,0 +1,44 @@
+\input{cv_style.tex}
+
+\begin{document}
+\raggedright
+\reversemarginpar
+
+\myKey{Introduction:}
+From my work at Nvidia, I have several years of experience independently designing, hand-optimizing, and (inevitably) debugging parallel algorithms motivated by real-world need. I'm looking to pivot away from manually implementing such algorithms, towards studying the underlying accelerator hardware and, ideally, abstractions that make programming them more automated, more safe, or require less specialized expertise. I look forward to dedicating more time as a PhD student to understanding the theory of parallel algorithms, programming languages, and compiler optimization at a deeper and more disciplined level than my day-to-day job allows for, and contribute to parallel-programming frameworks, DSLs, auto-scheduling, or accelerator hardware research.
+
+\myKey{Aetherling FPGA DSL:}
+I first contributed to this field while working at Stanford on the Aetherling DSL (``Type-Directed Scheduling of Streaming Accelerators'', PLDI 2020). This Haskell-embedded DSL compiles an input DAG for an image processing pipeline into an FPGA design, which
+is auto-parallelized (to fit the chip) using a type system that encodes interface and scheduling information for each DAG vertex.
+
+In this early phase of the project, I made a couple of practical contributions (a functional simulator and some test cases for generated hardware designs), but most of my work was in prototyping language design and the type system.  Most notably, I identified that the type system rules interacted poorly with the line buffer's 2D
+interface, and would have made it impossible (except special cases) to express a valid line buffer with a parallelization factor other than one. I proposed a new way of representing line buffer state that fixed this limitation, and assisted the lead author, David Durst, in seeing this new line buffer realized in a hardware design language.
+
+I also prototyped type systems for encoding scheduling information (latency, lane count, underutilization) and algorithms for automatic delay-matching.
+
+\myKey{Question:}
+Like most such DSLs, this abstraction is specialized for representing tensor and image processing. This raises one of my long-term research questions: to what extent can such novel languages (e.g. Halide, spatial, low-energy) be generalized to accelerate a much broader class of algorithms: those with more free-form, data-dependent memory access? Much of my day-to-day experience in implementing parallel algorithms (an experience I envision one day looking radically different) has been on such problems.
+
+\myKey{MediocrePy:}
+I faced such challenges in community college while working with \webText{https://astro.tsinghua.edu.cn/info/1039/1315.htm}{Dr. Zheng Cai} (UC Santa Cruz Astrophysics) to fix performance problems in their number-crunching codebase. We targetted the ``image combine'' and ``sigma-clipping'' steps for acceleration, which I re-implemented as a multithreaded AVX library, \webText{https://github.com/akeley98/MediocrePy}{MediocrePy}, that implements this algorithm over $100\times$ faster than the pure Python code replaced (I am the sole author).
+
+In this algorithm, a short stack of 2D images is combined into a single image, where the output pixel $(x,y)$ is a function of the stack of $(x,y)$ pixels taken from each input image.  This ``combine'' function iteratively takes the mean and standard deviation of unmasked pixel values, masks out outliers, and repeats an unpredictable number of times (independent per pixel stack) until convergence. Although nominally an image processing problem, with each pixel stack being its own independent lane, this problem was
+complicated by an unusual amount of data-dependent control flow and memory addressing.
+
+\myKey{NVIDIA:}
+My current 2D computational geometry research at Nvidia (co-presented with Mark Kilgard at GTC 2023, s51140) also yielded many such difficult-to-parallelize algorithms. One of them, fitting cubic Bézier segments to input point strips, is most naturally represented as a recursive sequential algorithm: we reduce the input points into a cubic segment, then, if the fit is poor, a heuristic chooses where to subdivide the input in two, and we recursively fit to both subdivided sequences (thus the recursion is non-trivial, and the size of the reduction is data-dependent).
+
+I transformed this to a GPU algorithm by
+
+1. Assigning one thread to each input point, and rewriting all loops.
+
+2. Transforming the recursion to tail recursion (as each point/thread is now involved in just one branch of the subdivide recursion).
+
+3. Efficiently parallelizing these unpredictable-length reductions (which pay no heed to warp or block boundaries).
+
+Although I've taken pains to keep the codebase clear and documented, the fact remains the actual algorithm can only be seen through a distorting lens, dimly, past all the atomics, interleaved synchronization, and comments explaining these complicated transformations. Wouldn't it be nice if there were clearer abstractions for expressing these manually-applied ``rewrite rules''?
+
+\myKey{Future:}
+But of course tackling such generality is probably more of a ``postdoc'' or ``never'' project, and that's fine. My immediate interests are to contribute to, and gain experience from, more realistic ways to push the state of the art for parallel algorithms and accelerator design. UC Berkeley, being the originator of the RISC-V architecture and active in research using it as the basis for custom accelerator research, provides fertile ground for future work in DSL and auto-scheduling research. Additionally, although my background in the hardware itself more limited than I wish, I have demonstrated past interest in learning more (in the form of taking a graduate-level architecture course at UCLA, and additional work modifying gem5), and view the chance to get more involved in hardware research as an additional challenging opportunity. In the long term (maybe late PhD; maybe postdoc), with the benefit of experience gained, I hope to be able to form a more informed opinion on what ways (if at all) novel hardware architectures, and the languages for programming them, can be extended to form a viable framework for accelerating more general-purpose algorithms.
+
+\end{document}
