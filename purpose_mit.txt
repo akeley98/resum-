@@ -4,14 +4,6 @@ My interests lie in designing disciplined abstractions that allow for non-expert
 
 In the meantime, I look forward to being able to dedicate more time as a PhD student to understanding the theory of parallel algorithms, programming languages, and compiler optimization at a deeper and more disciplined level than my day-to-day job allows for, and apply that knowledge, along with my existing industry experience working on substantial codebases, to contribute to parallel-programming frameworks, DSLs, or auto-scheduling research. My past hand-optimization experience has been on algorithms that are not really naturally represented as image, matrix, or sparse tensor computation, so I'm particularly (but not exclusively) curious about whether the work on parallel DSLs can be adapted to such problems.
 
-MediocrePy:
-
-As a side project in community college, I worked with Dr. Zheng Cai (UC Santa Cruz Astrophysics) to understand the performance problems of their number-crunching codebase. We targetted the "image combine" and "sigma-clipping" steps for acceleration. 
-
-In this algorithm, a short stack of 2D images is combined into a single image, where the output pixel (x,y) is a function of the stack of (x,y) pixels taken from each input image.  The combine function iteratively takes the mean/median and standard deviation of unmasked pixel values, masks out outliers, and repeats an unpredictable number of times (independent per pixel stack) until convergence. Although nominally an image processing problem, with each pixel stack being its own independent lane, this problem was complicated by an unusual amount of data-dependent control flow and memory addressing.
-
-I am the sole author of a multithreaded AVX library, MediocrePy, that implements this algorithm over 100 times faster than the pure Python code replaced.
-
 Aetherling:
 
 In summer 2018, as a research assistant at Stanford, I contributed to the Aetherling DSL ("Type-Directed Scheduling of Streaming Accelerators", PLDI 2020). This Haskell-embedded DSL compiles an input DAG for an image processing pipeline into an FPGA design, which is auto-parallelized (to fit the chip) using a type system that encodes interface and scheduling information for each DAG vertex.
@@ -20,19 +12,28 @@ In this early phase of the project, I made a couple of practical contributions (
 
 I also prototyped type systems for encoding scheduling information (latency, lane count, underutilization) and algorithms for automatic delay-matching.
 
+MediocrePy:
+
+In community college, I worked with Dr. Zheng Cai (UC Santa Cruz Astrophysics) to understand the performance problems of their number-crunching codebase. We targetted the "image combine" and "sigma-clipping" steps for acceleration.
+
+In this algorithm, a short stack of 2D images is combined into a single image, where the output pixel (x,y) is a function of the stack of (x,y) pixels taken from each input image.  The combine function iteratively takes the mean/median and standard deviation of unmasked pixel values, masks out outliers, and repeats an unpredictable number of times (independent per pixel stack) until convergence. Although nominally an image processing problem, with each pixel stack being its own independent lane, this problem was complicated by an unusual amount of data-dependent control flow and memory addressing.
+
+I am the sole author of a multithreaded AVX library, MediocrePy, that implements this algorithm over 100 times faster than the pure Python code replaced.
+
 NVIDIA:
 
-My recent work has been on developing novel GPU algorithms for 2D computational geometry, both as internal research in its own right, and in support of the (separate) cuLitho computational lithography project. The research software was presented at GTC 2023 as session s55140, "How to Accelerate 2D Shape Processing for Manufacturing and Planning". I primarily work with Mark Kilgard on this topic, although the majority of the algorithms, and all of the research code, were developed by me.
+My recent work has been on developing novel GPU algorithms for 2D computational geometry, both as internal research in its own right, and in support of the (separate) cuLitho computational lithography project. I co-presented the research at GTC 2023 in session s55140, "How to Accelerate 2D Shape Processing for Manufacturing and Planning". I primarily work with Mark Kilgard on this topic, although the majority of the algorithms, and all of the research code, were developed by me.
 
-As a concrete example of a motivating problem, consider cubic Bézier fitting. A typical algorithm for this generates a candidate cubic segment using a reduction over the input point sequence, and accepts only if the max deviation is low enough. If not, a heuristic chooses where to split the input into two sub-sequences, and we recursively fit to both subdivided sequences (thus the recursion is non-trivial, and the size of the reduction is data-dependent).
+This research produced many difficult-to-parallelize algorithms, for example, fitting cubic Bézier curves to input point strips. A typical sequential algorithm for this generates a candidate cubic segment using a reduction over the input point sequence, and accepts only if the max deviation is low enough. If not, a heuristic chooses where to split the input into two sub-sequences, and we recursively fit to both subdivided sequences (thus the recursion is
+non-trivial, and the size of the reduction is data-dependent).
 
-To port this to the GPU, I had to
+I transformed this to a GPU algorithm by
 
-1. Assign one thread to each input point, and rewrite all loops.
+1. Assigning one thread to each input point, and rewriting all loops.
 
-2. Transform the recursion to tail recursion (each point/thread is now involved in just one branch of the subdivide recursion).
+2. Transforming the recursion to tail recursion (each point/thread is now involved in just one branch of the subdivide recursion).
 
-3. Efficiently parallelize these unpredictable-length reductions (which pay no heed to warp or block boundaries).
+3. Efficiently parallelizing these unpredictable-length reductions (which pay no heed to warp or block boundaries).
 
 Although I've taken pains to keep the codebase clear and documented, the fact remains the actual algorithm can only be seen through a distorting lens, dimly, past all the atomics, interleaved synchronization, and comments explaining these complicated transformations.  Wouldn't it be nice if there were clearer abstractions for expressing these manually-applied "rewrite rules"?
 
