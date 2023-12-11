@@ -24,8 +24,7 @@ NVIDIA:
 
 My recent work has been on developing novel GPU algorithms for 2D computational geometry, both as internal research in its own right, and in support of the (separate) cuLitho computational lithography project. I co-presented the research at GTC 2023 in session s55140, "How to Accelerate 2D Shape Processing for Manufacturing and Planning". I primarily work with Mark Kilgard on this topic, although the majority of the algorithms, and all of the research code, were developed by me.
 
-This research produced many difficult-to-parallelize algorithms, for example, fitting cubic Bézier curves to input point strips. A typical sequential algorithm for this generates a candidate cubic segment using a reduction over the input point sequence, and accepts only if the max deviation is low enough. If not, a heuristic chooses where to split the input into two sub-sequences, and we recursively fit to both subdivided sequences (thus the recursion is
-non-trivial, and the size of the reduction is data-dependent).
+This research produced many difficult-to-parallelize algorithms, for example, fitting cubic Bézier curves to input point strips. A typical sequential algorithm for this generates a candidate cubic segment using a reduction over the input point sequence, and accepts only if the max deviation is low enough. If not, a heuristic chooses where to split the input into two sub-sequences, and we recursively fit to both subdivided sequences (thus the recursion is non-trivial, and the size of the reduction is data-dependent).
 
 I transformed this to a GPU algorithm by
 
